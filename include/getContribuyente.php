@@ -1,56 +1,56 @@
 <?php
-    $userName = "srijrcscarrillo";
-    $password = "F9234568!s";
-    $dbName = "srijrcscarrillo";
-    $server = "srijrcscarrillo.db.10949679.hostedresource.com";
-	$wk_ruc = 0;
-	$wk_razon =  "";
-	$wk_comercial =  "";
-	$wk_matriz =  "";
-	$wk_telefono = 0;
-	$wk_email =  "";
-	$wk_emisor =  "";
-	$wk_estab = 0;
-	$wk_punto = 0;
-	$wk_resol = 0;
-	$wk_lleva =  "";
-	$wk_ambiente = 0;
-	$wk_emision = 0;
-	$wk_token = 0;
-	$wk_nota =  "";
-	$wk_id = 0;
-	$wk_logo = " ";
-	$amt=10; 
-  	$start=0; 
-	$aaData = array();
-	
-	$db = new mysqli($server, $userName, $password, $dbName);
-	if ($db -> connect_errno) {
-		die('Error de Conexion: ' . $db -> connect_errno);
-	}
-	$sql = "select * from Contribuyente";
-	if ($stmt = $db -> query($sql)) {
-		$nroContribuyentes = $stmt->num_rows;
-	} else {
-		echo "No accesa a la base de datos";
-	}
-	$sql = "select ContribuyenteRuc, ContribuyenteRazon, ContribuyenteNombreComercial from Contribuyente order by ContribuyenteRazon limit $start,$amt";
-	if ($stmt = $db -> query($sql)) {
-		while ($registro = $stmt -> fetch_assoc()) {
-			$record = array('"Ruc":' => $registro["ContribuyenteRuc"], '"Razon":' => $registro["ContribuyenteRazon"], '"Comercial":' => $registro["ContribuyenteNombreComercial"]);
-			$aaData[]=$record;
-		}
-		$varJson = array('"draw":' => 1, '"recordsTotal":' => $nroContribuyentes, '"recordsFiltered":' => $amt, '"data":' => $aaData );
-		//var_dump($varJson);
-                //$record = array( '"data":' => $aaData );
-		echo json_encode($varJson);
-    	/* free result set */
-    	$stmt->free();
-		/* close statement */
-		//$stmt -> close();
-	} else {
-		echo "No accesa a la base de datos";
-	}
-	$db -> close();
-	return true;
-?>
+/*
+ * DataTables example server-side processing script.
+ *
+ * Please note that this script is intentionally extremely simply to show how
+ * server-side processing can be implemented, and probably shouldn't be used as
+ * the basis for a large complex system. It is suitable for simple use cases as
+ * for learning.
+ *
+ * See http://datatables.net/usage/server-side for full details on the server-
+ * side processing requirements of DataTables.
+ *
+ * @license MIT - http://datatables.net/license_mit
+ */
+ 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * Easy set variables
+ */
+ 
+// DB table to use
+$table = 'Contribuyente';
+ 
+// Table's primary key
+$primaryKey = 'idContribuyente';
+ 
+// Array of database columns which should be read and sent back to DataTables.
+// The `db` parameter represents the column name in the database, while the `dt`
+// parameter represents the DataTables column identifier. In this case simple
+// indexes
+$columns = array(
+    array( 'db' => 'ContribuyenteRuc', 'dt' => 0 ),
+    array( 'db' => 'ContribuyenteRazon',  'dt' => 1 ),
+    array( 'db' => 'ContribuyenteNombreComercial',   'dt' => 2 ),
+    array( 'db' => 'ContribuyenteCodEmisor', 'dt' => 3),
+    array( 'db' => 'ContribuyentePunto', 'dt' => 4)
+    );
+ 
+// SQL server connection information
+$sql_details = array(
+    'user' => 'srijrcscarrillo',
+    'pass' => 'F9234568!s',
+    'db'   => 'srijrcscarrillo',
+    'host' => 'srijrcscarrillo.db.10949679.hostedresource.com'
+);
+ 
+ 
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * If you just want to use the basic configuration for DataTables with PHP
+ * server-side, there is no need to edit below this line.
+ */
+ 
+require( 'sspclass.php' );
+ 
+echo json_encode(
+    SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )
+);

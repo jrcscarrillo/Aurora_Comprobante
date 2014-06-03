@@ -30,17 +30,16 @@
       $(document).ready(function(){ 
         $("#the_table").dataTable({ 
           "processing":true,
-          "serverSide":true,	
-          "sAjaxDataProp": "",
-          "recordsFiltered": 10,
-          "ajax": {
-              "url": "./include/getContribuyente.php",
-              "columns": [
-                  { "data": "Ruc" },
-                  { "data": "Razon" },
-                  { "data": "Comercial" }
-              ]
-          }
+          "serverSide":true,
+          "columns": [
+              { "width": "10%"},
+              { "width": "35%"},
+              { "width": "25%"},
+              { "width": "10%"},
+              { "width": "10%"}
+          ],
+          "scrollX":true,
+          "ajax": "./include/getContribuyente.php"
         }); 
       }); 
     </script> 
@@ -123,11 +122,15 @@
 <!--
 	Definicion de la tabla con las columnas de datos
 -->
-    <div style="width:500px"> 
-      <table id="the_table"> 
+    <div> 
+      <table id="the_table" class="display" cellspacing="0" width="100%"> 
         <thead> 
           <tr>
-            <th>RUC</th><th>Razon Social</th><th>Nombre Comercial</th>
+            <th>RUC</th>
+            <th>Razon Social</th>
+            <th>Nombre Comercial</th>
+            <th>Establecimiemto</th>
+            <th>Punto Emision</th>
           </tr> 
         </thead> 
         <tbody>         
