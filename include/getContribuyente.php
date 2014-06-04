@@ -16,7 +16,7 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  * Easy set variables
  */
- 
+
 // DB table to use
 $table = 'Contribuyente';
  
@@ -32,7 +32,10 @@ $columns = array(
     array( 'db' => 'ContribuyenteRazon',  'dt' => 1 ),
     array( 'db' => 'ContribuyenteNombreComercial',   'dt' => 2 ),
     array( 'db' => 'ContribuyenteCodEmisor', 'dt' => 3),
-    array( 'db' => 'ContribuyentePunto', 'dt' => 4)
+    array( 'db' => 'ContribuyentePunto', 'dt' => 4),
+    array( 'db' => 'ContribuyenteDirMatriz', 'dt' => 5),
+    array( 'db' => 'ContribuyenteDirEmisor', 'dt' => 6),
+    array( 'db' => 'ContribuyenteLlevaContabilidad', 'dt' => 7)    
     );
  
 // SQL server connection information
@@ -50,7 +53,7 @@ $sql_details = array(
  */
  
 require( 'sspclass.php' );
- 
+
 echo json_encode(
     SSP::simple( $_GET, $sql_details, $table, $primaryKey, $columns )
 );

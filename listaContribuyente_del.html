@@ -16,11 +16,13 @@
 		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" href="./css/jquery.dataTables.css" />
 		<link rel="stylesheet" href="./css/jquery.dataTables_themeroller.css" />
+                <style type="text/css">
+                    #aprieta {width: 200px }
+                </style>
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
 		<script type="text/javascript" src="./js/jquery.dataTables.js"></script>
-		<script type="text/javascript" src="./js/dataTables.fixedColumns.js"></script>
 		<script type="text/javascript" src="./js/jqueryslidemenu.js"></script>
 		<script type="text/javascript" src="./js/jquery.nivo.slider.js"></script>
 		<script type="text/javascript" src="./js/jquery.bxSlider.min.js"></script>
@@ -30,26 +32,32 @@
     <script> 
       $(document).ready(function(){ 
 
-        var table = $("#the_table").dataTable({ 
+          $('#the_table tbody').on( 'click', 'tr', function () {
+              if ( $(this).hasClass('selected') ) {
+                  $(this).removeClass('selected');
+              }
+              else {
+                  $(this).removeClass('selected');
+                  $(this).addClass('selected');
+              }
+          } );
+          $('#aprieta').click( function (e) {
+              e.preventDefault();
+              $('.selected').remove();
+          } );
+        $("#the_table").dataTable({ 
           "processing":true,
           "serverSide":true,
-          "scrollX":true,
-          "scrollColapse":true,
           "columns": [
               { "width": "10%"},
               { "width": "35%"},
               { "width": "25%"},
-              { "width": "5%"},
-              { "width": "5%"},
-              { "width": "20%"},
-              { "width": "20%"},
-              { "width": "5%"}
+              { "width": "10%"},
+              { "width": "10%"}
           ],
+          "scrollX":true,
           "ajax": "./include/getContribuyente.php"
         }); 
-        new $.fn.dataTable.FixedColumns( table, {
-            leftColumns: 1
-        } );
       }); 
     </script> 
 	</head>
@@ -132,6 +140,7 @@
 	Definicion de la tabla con las columnas de datos
 -->
     <div> 
+      <button id="aprieta" type="submit" class="button ">Eliminar Fila Seleccionada</button>
       <table id="the_table" class="display" cellspacing="0" width="100%"> 
         <thead> 
           <tr>
@@ -140,9 +149,6 @@
             <th>Nombre Comercial</th>
             <th>Establecimiemto</th>
             <th>Punto Emision</th>
-            <th>Direccion Matriz</th>
-            <th>Direccion Emisor</th>
-            <th>Contabilidad?</th>
           </tr> 
         </thead> 
         <tbody>         
