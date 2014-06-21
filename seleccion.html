@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Nuevo Contribuyente</title>
+		<title>Seleccion de Facturas</title>
 
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -16,6 +16,10 @@
 		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
 		<link rel="stylesheet" href="./css/jquery.dataTables.css" />
 		<link rel="stylesheet" href="./css/jquery.dataTables_themeroller.css" />
+                <style type="text/css">
+                    #aprieta {width: 200px }
+                </style>
+
 
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
@@ -37,18 +41,37 @@
           "scrollColapse":true,
           "columns": [
               { "width": "10%"},
-              { "width": "35%"},
-              { "width": "25%"},
+              { "width": "10%"},
+              { "width": "15%"},
               { "width": "5%"},
               { "width": "5%"},
               { "width": "20%"},
-              { "width": "20%"},
-              { "width": "5%"}
+              { "width": "15%"},
+              { "width": "7%"},
+              { "width": "7%"},
+              { "width": "7%"}
           ],
-          "ajax": "./include/getContribuyente.php"
+          "ajax": "./include/seleccion.php"
         }); 
+
         new $.fn.dataTable.FixedColumns( table, {
             leftColumns: 1
+        } );
+
+        $('#the_table tbody').on( 'click', 'tr', function () {
+            $(this).toggleClass('selected');
+        } );
+        
+        $('#aprieta').click( function () {
+            varJson = "{Primera Prueba  [";
+            $(".selected td").each(function(){
+                varJson += $(this).html() + ", ";
+            });
+            varJson =
+            $.post("./include/registra.php", varJson, function(data, status){
+                alert("datos= " + data + "Estado= " + status);
+            });
+            //alert( table.rows('.selected').data().length +' row(s) selected' );
         } );
       }); 
     </script> 
@@ -132,17 +155,20 @@
 	Definicion de la tabla con las columnas de datos
 -->
     <div> 
+        <button id="aprieta" type="submit" class="button button_inner">Seleccione</button>
       <table id="the_table" class="display" cellspacing="0" width="100%"> 
         <thead> 
           <tr>
-            <th>RUC</th>
-            <th>Razon Social</th>
-            <th>Nombre Comercial</th>
-            <th>Establecimiemto</th>
-            <th>Punto Emision</th>
-            <th>Direccion Matriz</th>
-            <th>Direccion Emisor</th>
-            <th>Contabilidad?</th>
+            <th>Nro. Trx.</th>
+            <th>Numero Factura</th>
+            <th>Nro. Cliente</th>
+            <th>Razon Social Cliente</th>
+            <th>Fecha de Emision</th>
+            <th>Nro. Referencia</th>
+            <th>Valor FOB</th>
+            <th>Subtotal</th>
+            <th>Impuestos</th>
+            <th>Total</th>
           </tr> 
         </thead> 
         <tbody>         

@@ -1,9 +1,10 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-<title>AURORA - SRI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>AURORA - SRI</title>
+
 <link rel="stylesheet" href="css/reset.css" />
 <link rel="stylesheet" href="css/text.css" />
 <link rel="stylesheet" href="css/960_12_col.css" />
@@ -18,120 +19,431 @@
 <script type="text/javascript" src="js/jquery.elastislide.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 <script type="text/javascript" src="js/scrolltop.js"></script>
-</head>
-<body>
-<div id="wrapper" class="boxed">
-	<div class="top_navigation_container">
-		<div class="top_navigation">
-			<ul>
-                <li><a href="construyendo.html">Contactenos</a></li>
-                <li><a href="http:\\www.carrillosteam.com">Carrillos Team</a></li>
-                <li><a href="construyendo.html">Esta Aplicacion</a></li>
-				</ul>
-			</div>
-			<div class="top_navigation_social">
-				<p>AURORA_E</p>
-					<ul>
-						<li class="social_facebook">
-							<a href="#">Facebook</a>
-						</li>
-						<li class="social_twitter">
-							<a href="#">Twitter</a>
-						</li>
-						<li class="social_dribbble">
-							<a href="#">Dribbble</a>
-						</li>
-						<li class="social_linkedin">
-							<a href="#">Linkedin</a>
-						</li> 
-						<li class="social_pinterest">
-							<a href="#">Pinterest</a>
-						</li>
-					</ul>                       
-			</div>
-        </div> 
-        <div id="header"><!-- Header start -->
-
-        <div class="container_12 clearfix"><!-- Menu container -->
-		<div class="grid_12"><!-- Start Menu -->
-			<div id="topnav" class="jqueryslidemenu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="#">Contribuyente</a>
-						<ul>
-                                <li><a href="./listaContribuyente.html">Lista de Contribuyentes</a></li>
-                                <li><a href="./addContribuyente.html">Nuevo Contribuyente</a></li>
-						</ul>
-					</li>
-					<li><a href="seleccion.html">Seleccion</a></li>
-					<li><a href="#">Facturas</a>
-						<ul>
-                                <li><a href="facturaSin.html">Sin Procesar</a></li>
-                                <li><a href="facturaAut.html">Autorizadas</a></li>
-                                <li><a href="facturaFir.html">Firmadas</a></li>
-                                <li><a href="facturaEnv.html">Enviadas</a></li>
-                                <li><a href="facturaPen.html">Pendientes</a></li>
-                                <li><a href="#">Otros Estados</a></li>
-						</ul>
-					</li>                            
-					<li><a href="#">Notas Debito</a>
-						<ul>
-                                <li><a href="facturaSin.html">Sin Procesar</a></li>
-                                <li><a href="facturaAut.html">Autorizadas</a></li>
-                                <li><a href="facturaFir.html">Firmadas</a></li>
-                                <li><a href="facturaEnv.html">Enviadas</a></li>
-                                <li><a href="facturaPen.html">Pendientes</a></li>
-                                <li><a href="#">Otros Estados</a></li>
-						</ul>
-					</li> 
-					<li><a href="#">Notas Credito</a>
-						<ul>
-                                <li><a href="facturaSin.html">Sin Procesar</a></li>
-                                <li><a href="facturaAut.html">Autorizadas</a></li>
-                                <li><a href="facturaFir.html">Firmadas</a></li>
-                                <li><a href="facturaEnv.html">Enviadas</a></li>
-                                <li><a href="facturaPen.html">Pendientes</a></li>
-                                <li><a href="#">Otros Estados</a></li>
-						</ul>
-					</li> 
-					<li><a href="#">Retenciones</a>
-						<ul>
-                                <li><a href="facturaSin.html">Sin Procesar</a></li>
-                                <li><a href="facturaAut.html">Autorizadas</a></li>
-                                <li><a href="facturaFir.html">Firmadas</a></li>
-                                <li><a href="facturaEnv.html">Enviadas</a></li>
-                                <li><a href="facturaPen.html">Pendientes</a></li>
-                                <li><a href="#">Otros Estados</a></li>
-						</ul>
-					</li>
-					<li><a href="#">Guias</a>
-						<ul>
-                                <li><a href="facturaSin.html">Sin Procesar</a></li>
-                                <li><a href="facturaAut.html">Autorizadas</a></li>
-                                <li><a href="facturaFir.html">Firmadas</a></li>
-                                <li><a href="facturaEnv.html">Enviadas</a></li>
-                                <li><a href="facturaPen.html">Pendientes</a></li>
-                                <li><a href="#">Otros Estados</a></li>
-						</ul>
-					</li> 
-				</ul>
-			</div>
-		</div><!-- end menu -->        	
-        </div><!-- end menu container -->
-    </div><!-- Header end -->
-<div id="pre_footer">
-    	<div class="pre_footer_wrapper"></div>
-    </div>        
-	<div id="footer_wrapper">
-		<div class="container_12 clearfix">
-            <div id="footer">
-            	<div class="copyright_left">&reg; Copyright 2014 Carrillos Team</div>
-            	<div class="copyright_right">Powered by <a href="http://www.thunderthemes.net">ThunderThemes.net</a></div>
+<script type="text/javascript" src="js/jquery.toggleElements.pack.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+    </head>
+    <body>
+        <div id="wrapper" class="boxed">
+            <div class="top_navigation_container">
+                <div class="top_navigation">
+                    <ul><li><a href="construyendo.html">Contactenos</a></li>
+                        <li><a href="http:\\www.carrillosteam.com">Carrillos Team</a></li>
+                        <li><a href="construyendo.html">Esta Aplicacion</a></li>
+                    </ul>
+                </div>
+                <div class="top_navigation_social">
+                    <p>
+                        AURORA_E
+                    </p>
+                    <ul><li class="social_facebook"><a href="#">Facebook</a></li>
+                        <li class="social_twitter"><a href="#">Twitter</a></li>
+                        <li class="social_dribbble"><a href="#">Dribbble</a></li>
+                        <li class="social_linkedin"><a href="#">Linkedin</a></li>
+                        <li class="social_pinterest"><a href="#">Pinterest</a></li>
+                    </ul>
+                </div>
             </div>
-    	</div>
-	</div>
-<div id="topcontrol" style="position: fixed; bottom: 0px; right: 0px; opacity: 1; cursor: pointer;" title="To the top! To the victory!">
-</div>
-</div>
-</body>
+            <div id="header">
+                <!-- Header start -->
+
+                <div class="container_12 clearfix">
+                    <!-- Menu container -->
+                    <div class="grid_12">
+                        <!-- Start Menu -->
+                        <div id="topnav" class="jqueryslidemenu">
+                            <ul><li><a href="index.html">Home</a></li>
+                                <li><a href="#">Administracion</a>
+                                    <ul><li><a href="./login.html">Login</a></li>
+                                        <li><a href="./listaContribuyente.html">Lista de Contribuyentes</a></li>
+                                        <li><a href="./addContribuyente.html">Nuevo Contribuyente</a></li>
+                                        <li><a href="./generaClave.html">Generacion de Claves</a></li>
+                                        <li><a href="./listaClaves.html">Lista de Claves</a></li>
+                                        <li><a href="./recuperaClave.html">Recuperacion de Claves</a></li>
+                                    </ul></li>
+                                <li><a href="#">Facturas</a>
+                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
+                                        <li><a href="facturaAut.html">Firmar</a></li>
+                                        <li><a href="facturaFir.html">Enviar</a></li>
+                                        <li><a href="facturaEnv.html">Recibir</a></li>
+                                        <li><a href="facturaPen.html">Autorizadas</a></li>
+                                        <li><a href="#">No Autorizadas</a></li></ul></li>
+                                <li><a href="#">Notas Debito</a>
+                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
+                                        <li><a href="facturaAut.html">Firmar</a></li>
+                                        <li><a href="facturaFir.html">Enviar</a></li>
+                                        <li><a href="facturaEnv.html">Recibir</a></li>
+                                        <li><a href="facturaPen.html">Autorizadas</a></li>
+                                        <li><a href="#">No Autorizadas</a></li></ul></li>
+                                <li><a href="#">Notas Credito</a>
+                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
+                                        <li><a href="facturaAut.html">Firmar</a></li>
+                                        <li><a href="facturaFir.html">Enviar</a></li>
+                                        <li><a href="facturaEnv.html">Recibir</a></li>
+                                        <li><a href="facturaPen.html">Autorizadas</a></li>
+                                        <li><a href="#">No Autorizadas</a></li></ul></li>
+                                <li><a href="#">Retenciones</a>
+                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
+                                        <li><a href="facturaAut.html">Firmar</a></li>
+                                        <li><a href="facturaFir.html">Enviar</a></li>
+                                        <li><a href="facturaEnv.html">Recibir</a></li>
+                                        <li><a href="facturaPen.html">Autorizadas</a></li>
+                                        <li><a href="#">No Autorizadas</a></li></ul></li>
+                                <li><a href="#">Guias</a>
+                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
+                                        <li><a href="facturaAut.html">Firmar</a></li>
+                                        <li><a href="facturaFir.html">Enviar</a></li>
+                                        <li><a href="facturaEnv.html">Recibir</a></li>
+                                        <li><a href="facturaPen.html">Autorizadas</a></li>
+                                        <li><a href="#">No Autorizadas</a></li></ul></li>
+                            </ul>
+                        </div>
+                    </div><!-- end menu -->
+                </div><!-- end menu container -->
+            </div><!-- Header end -->
+
+            <div class="container_12 clearfix">
+                <div id="content_wrapper">
+                    <div class="grid_12 page_title">
+                        <h1>Documentacion: Comprobantes electronicos extension para Quickbooks<span class="subtitle">Version 1.0 (Preparado para SALGRAF) </span></h1>
+                    </div>        
+                    <div id="content" class="grid_6">
+                        <h1>Presentacion AURORA_E</h1>
+                        <p>
+                            El Servicio de Rentas Internas del Ecuador ha expedido las normas para la implementacion de la
+                            firma electronica de los documentos emitidos por los sujetos pasivos.
+                            Los documentos que deberan ser firmados digitalmene son: las facturas,
+                            las notas de debito y credito, los comprobantes de retencion, y las guias de remision.
+                            SALGRAF ha proporcionado la información inicial para desarrollar esta aplicación
+                            para satisfacer los requerimientos empresariales de SALGRAF en relación con la 
+                            emisión de los comprobantes emitidos por la compañía bajo los estándares corporativos
+                            de SALGRAF y su emisión electrónica bajo las reglas anunciadas por el SRI. 
+                        </p>
+                        <h2>Objetivos</h2>
+                        <p>La aplicación administra todos los procesos para la emisión electronica de facturas, 
+                            notas de débito, notas de crédito, guías de remisión, y comprobantes de retención; 
+                            utilizando los servicios del Internet y adjuntando la certificación electrónica para 
+                            enviar a los clientes de SALGRAF por medio del correo electrónico. 
+                            Para el efecto la aplicación utilizara la sincronización de los datos desde la 
+                            aplicación Quickbooks con la base de datos generada por esta nueva aplicación.
+                        </p>
+                    </div>
+                    <div class="grid_6">
+                        <h3>Adquirir el Certificado Digital</h3>
+                        <p>Solicitar en <a href="https://www.eci.bce.ec">https://www.eci.bce.ec</a> la Entidad de Certificación de 
+                           Información del Banco Central del Ecuador, se debe enviar los documentos requeridos en formato electrónico de 
+                           toda la información requerida. El banco central notificará por medio de correo 
+                           electrónico o teléfono al subscritor que debe realizar el pago.
+                           Una vez realizado el pago por cualquiera de los medios señalados en la página 
+                           web de la ECIBCE, el operador de registro notificara lugar, fecha y hora para 
+                           proceder a la identificación y emisión del certificado solicitado. 
+                           El solicitante/suscriptor deberá presentarse ante la Autoridad de Registro de la 
+                           ECIBCE con una cédula o pasaporte válido y suficientemente claro y 
+                           actualizado para permitir su inequívoca identificación. 
+                           
+                        </p>
+                        <h3>Requerimientos del SRI</h3>
+                        <p>  
+                            La solicitud de certificación para los ambientes de pruebas y producción deberá realizarla directamente a 
+                            través del Portal WEB del SRI (Servicios en Línea), recuerde que debe encontrarse en estado activo y al día
+                            en sus obligaciones tributarias para evitar cualquier tipo de sanción posteriormente, esta solicitud se 
+                            realizará por una sola vez para cada ambiente
+                        </p>
+                        <h3>Quickbooks y Opensync</h3>
+                        <p>Permite la sincronizacion de las bases de datos en las dos direcciones. 
+                            Permite recuperar los reports generados en QUICKBOOKS 
+                            Se puede sincronizar con las bases de datos: MS Access, Microsoft SQLServer, MySQL, y 
+                            Oracle. 
+                            Operaciones de sincronizacion automatcas con bitacora de eventos y un navegador de datos 
+                            incluido. Es una herramienta con mejores alternativas que QODBC.
+
+                        </p>
+                    </div>
+                    <div class="grid_12"><div class="separator line"></div></div>  
+                    <div class="grid_3 columns">                  
+                        <h3>Secuencia de Procesos</h3>
+                        <ol class="ordered">
+                            <li>Proceso por primera vez
+                                <ol>
+                                    <li>Generar al menos dos copias del certificado digital</li>
+                                    <li>Instalar el servidor web</li>
+                                    <li>Instalar Opensync</li>
+                                    <li>Definir proceso de generacion de la base de datos sincronizada</li>
+                                    <li>Generar los indices y relaciones de las tablas</li>
+                                </ol>
+                            </li>
+                            <li>Ambiente de Pruebas</li>
+                            <li>Ambiente de Produccion</li>
+                            <li>Procesos utilitarios</li>
+                        </ol>
+                        <a class="button large green" href="http://www.carrillosteam.com">Carrillos Team</a>
+                    </div>
+                    <div class="grid_3 columns">  
+                        <h3>Opciones de Administracion</h3>
+                        <ul class="unordered">
+                            <li>Definir los niveles de seguridad</li>
+                            <li>Ingreso de usuarios</li>
+                            <li>Cambio de claves y eliminacion de usuarios</li>
+                            <li>Mantenimiento de Puntos de Emision</li>
+                            <li>Generacion de Claves</li>
+                            <li>Lista de Claves</li>
+                            <li>Recuperar estado de claves</li>
+                        </ul>
+                        <a class="button large orange" href="http://www.sri.gob.ec">S.R.I.</a>
+                    </div>
+                    <div class="grid_3 columns">  
+                        <h3>Bullet list</h3>
+                        <ul class="bullet">
+                            <li>Nullam sit amet ipsum ac diam egestas cursus</li>
+                            <li>In sodales odio quis felis semper in tincidunt</li>
+                            <li>Aenean amet nunc vestibulum consectetur in ornare</li>
+                            <li>Curabitur tristique cursus diam pretium dignissim</li>
+                            <li>Phasellus nec nulla et purus imperdiet tincidunt</li>
+                            <li>Fusce eleifend condimentum tortor pretium vestibulum</li>
+                            <li>Fusce eleifend condimentum tortor pretium vestibulum</li>
+                        </ul>
+                        <a class="button large blue" href="http://themeforest.net/user/thunderthemes">Purchase Now</a>
+                    </div>
+                    <div class="grid_3 columns">  
+                        <h3>Check and arrow List</h3>
+                        <ul class="check">
+                            <li>Mi lectus mattis massa, quis aliquam erat arcu sodales</li>
+                            <li>Donec varius luctus magna, ac tincidunt eros sit amet</li>
+                            <li class="cross">Nulla eget libero eu est egestas vulputate sed vel urna</li>
+                            <li class="cross">Nulla eget libero eu est egestas vulputate sed vel urna</li>
+                        </ul>
+                        <ul class="arrow">
+                            <li>Suspendisse pellentesque risus a nunc egestas imperdiet</li>
+                            <li>Donec et enim congue odio fermentum scelerisque eu ipsum</li>
+                            <li>Maecenas venenatis nibh sit amet ligula malesuada faucibus</li>
+                        </ul>
+                        <a class="button large red" href="http://themeforest.net/user/thunderthemes">Purchase Now</a>
+                    </div>
+                    <div class="grid_12"><div class="separator line"></div></div>  
+                    <div class="grid_12"><h3>Diagrama General de la Aplicacion</h3>
+                        <a href="#"><img class="alignleft" src="./images/aurora_e.png" width="500" height="368" alt="Image Placeholder" /></a>
+                        Esta aplicación es autónoma del Quickbooks, y se puede ejecutar sin necesidad de que esté disponible Quickbooks. 
+                        La aplicación controlara todos los documentos que han sido emitidos, requeridos para la firma, firmados, 
+                        autorizados, rechazados, pendientes y pueden ser consultados utilizando la base de datos generada por la
+                        aplicacion y que residen en un servidor de Internet. 
+                        Firma electrónica: Son los datos en forma electrónica consignados en un mensaje de datos, 
+                        adjuntados o lógicamente asociados al mismo, y que puedan ser utilizados para identificar 
+                        al titular de la firma en relación con el mensaje de datos, e indicar que el titular de la 
+                        firma aprueba y reconoce la  información contenida en el mensaje de datos.
+                        La Entidad de Certificación de información y servicios relacionados (ECIBCE): Es el Banco 
+                        Central del Ecuador que emite certificados de firma electrónica y que puede prestar otros 
+                        servicios relacionados con la firma electrónica, autorizada por el Consejo Nacional de 
+                        Telecomunicaciones, según lo dispuesto en Ley de Comercio Electrónico, Firmas Electrónicas 
+                        y Mensajes de Datos y su Reglamento.
+                        Certificados de Firma Electrónica de todo propósito: Son certificados de firma electrónica 
+                        que servirán para firmar electrónicamente: correos, facturas, contratos, etc. donde 
+                        se pueda reemplazar la firma manuscrita y se encuentre facultado para hacerlo dentro del 
+                        ámbito de su actividad o límites de su uso. Este certificado, puede ser utilizado por 
+                        personas naturales, personas pertenecientes a empresas y funcionarios o servidores públicos.
+                        Existen varias opciones de certificado digital, pero esta aplicación utiliza un ARCHIVO 
+                        (Es un certificado estándar x.509 en formato p12, que puede ser integrado en cualquier 
+                        sistema operativo) - vigencia 1 año.
+                        <p></p>
+
+                    </div>
+                    <div class="grid_12"><h3>Generacion y Mantenimiento de la Base de Datos</h3>
+                        <a href="#"><img class="alignright" src="./images/aurora_e_opensync.png" width="500" height="368" alt="Image Placeholder" /></a>
+                        OpenSync es una herramienta que ha sido desarrollada para sincronizar la base de datos
+                        de QuickBooks con MySQL, SQL Server, Access, u Oracle.
+                        Existen dos versiones de Opensync la configuracion basica utiliza Access, y la otra version administra
+                        las otras bases de datos. La principal ventaja que significa poseer una base de datos paralela 
+                        y sincronizada con la base de datos de Quickbooks es, los datos pueden ser de tener una base de datos del mercado permitirá a SALGRAF integrar la base de datos sincronizada desde QuickBooks con cualquier desarrollo y este podría ser: la integración con el website corporativo, generación de reportes, y/o desarrollo de otras aplicaciones.
+                    </div>
+                    <div class="grid_12"><div class="separator line"></div></div>
+                    <div class="grid_6">
+                        <h3 class="bordtitles">Notifications</h3>
+                        <div id="notification_1" class="notification notice closeable">
+                            <p><span>Info!</span> If you're looking for service which isn't listed below.</p>
+                            <a class="close" href="#"></a>
+                        </div>
+                        <div id="notification" class="notification error closeable" style="display: block;">
+                            <p><span>Error!</span> Please fill in all the fields required.</p>
+                            <a class="close" href="#"></a>
+                        </div>
+                    </div>
+                    <div class="grid_6">
+                        <h3 class="bordtitles">Notifications 2</h3>
+                        <div id="notification_2" class="notification success closeable" style="display: block;">
+                            <p><span>Success!</span> You did it, now relax and enjoy it.</p>
+                            <a class="close" href="#"></a>
+                        </div>
+                        <div id="notification_3" class="notification warning closeable" style="display: block;">
+                            <p><span>Warning!</span> Change this and that and try again.</p>
+                            <a class="close" href="#"></a>
+                        </div>            
+                    </div>        
+                    <div class="grid_12"><div class="separator line"></div>  
+                        <h3 class="bordtitles">Toggle</h3> 
+                        <div class="block_accordion">
+                            <div class="button_outer first"><div class="button_inner">Therapy Description</div></div>
+                            <div class="content" style="display: none;">
+                                <div class="centers_item one">
+                                    <span class="description_left">Day cycles</span>
+                                    <span class="description_right">3hours/day</span>
+                                </div>
+                                <div class="centers_item two">
+                                    <span class="description_left">Week cycles</span>
+                                    <span class="description_right">1day/5ml</span>
+                                </div>
+                                <div class="centers_item one">
+                                    <span class="description_left">Year cycles</span>
+                                    <span class="description_right">250days/year 4ml</span>
+                                </div>
+                                <div class="centers_item two">
+                                    <span class="description_left">Therapy name</span>
+                                    <span class="description_right">Enterogermina</span>
+                                </div>
+                            </div>
+                            <div class="button_outer current"><div class="button_inner">Google Map : Lookup</div></div>
+                            <div class="content map" style="display: none;">
+                                <p><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?f=q&amp;source=s_q&amp;hl=it&amp;geocode=&amp;q=via+san+giovanni+valdarno,+roma&amp;aq=&amp;sll=45.478225,9.153267&amp;sspn=0.176697,0.528374&amp;ie=UTF8&amp;hq=&amp;hnear=Via+San+Giovanni+Valdarno,+00138+Roma,+Lazio&amp;t=m&amp;z=14&amp;ll=42.006579,12.518659&amp;output=embed"></iframe>
+                                </p>
+                            </div>
+                            <div class="button_outer last"><div class="button_inner">Readable content of a page when looking.</div></div>
+                            <div class="content last" style="display: none;">
+                                <p>Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid_12"><div class="separator line"></div></div>  
+                    <div class="grid_12"><h3 class="bordtitles">Content with Dropcaps</h3></div>
+                    <div class="grid_3 columns">
+                        <span class="dropcap1">A</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                    </div>
+                    <div class="grid_3 columns">
+                        <span class="dropcap1">B</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                    </div>
+                    <div class="grid_3 columns">
+                        <span class="dropcap1">C</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                    </div>
+                    <div class="grid_3 columns">
+                        <span class="dropcap1">D</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                    </div>
+                    <div class="grid_12"><div class="separator line"></div></div>
+                    <div class="grid_12">
+                        <h3 class="bordtitles">Descripcion de Procesos</h3>
+                        <table class="standard-table">
+                            <tbody>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                    <th>Requerimiento</th>
+                                    <th>Resultado</th>
+                                </tr>
+                                <tr>
+                                    <td>Seleccion de Comprobantes</td>
+                                    <td>Se leen todos los comprobantes seleccionados desde las tablas que contienen los
+                                    datos originales de QUICKBOOKS, y se registran en las tablas cuyo formato corresponde
+                                    al requerido por el SRI</td>
+                                    <td>Ingresar la fecha inicial y final</td>
+                                    <td>Mensaje con el numero de comprobantes ingresados</td>
+                                </tr>
+                                <tr>
+                                    <td>Firmar Comprobantes</td>
+                                    <td>Description</td>
+                                    <td>Ingresar la fecha inicial y final</td>
+                                    <td>Archivos en XML generados</td>
+                                </tr>
+                                <tr>
+                                    <td>Doctor #3</td>
+                                    <td>Description</td>
+                                    <td>Therapy 1</td>
+                                    <td>Therapy 2</td>
+                                </tr>
+                                <tr>
+                                    <td>Doctor #4</td>
+                                    <td>Description</td>
+                                    <td>Therapy 1</td>
+                                    <td>Therapy 2</td>
+                                </tr>
+                                <tr>
+                                    <td>Doctor #5</td>
+                                    <td>Description</td>
+                                    <td>Therapy 1</td>
+                                    <td>Therapy 2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div><!-- End content wrapper -->
+            </div><!-- End container_12 -->
+            <div id="pre_footer">
+                <div class="pre_footer_wrapper">
+                    <div id="footersliding" class="container_12 clearfix">
+                        <div class="grid_3">
+                            <h4><span>Text widget</span></h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                
+
+
+                        </div>
+                        <div class="grid_3">
+                            <h4><span>Latest articles</span></h4>
+                            <ul>
+                                <li><a href="#">Examination of symptoms using latest technologies</a></li>
+                                <li><a href="#">Ask our doctor a question!</a></li>
+                                <li><a href="#">Health and care?</a></li>
+                                <li><a href="#">Dental Hygienist Career</a></li>
+                            </ul>
+                        </div>
+                        <div class="grid_3">
+                            <h4><span>Most read</span></h4>
+                            <div class="article_box">
+                                <div class="article_box_img"> 
+                                    <a href="#"><img src="images/img-50x50.jpg" width="50" height="50" alt="image 50 50" /></a>
+                                </div>
+                                <div class="article_box_title"><a href="#">The ultimate cure for patients</a></div>
+                                <div class="article_box_date">Posted Sept 30, 2012</div>
+                            </div>                    
+                            <div class="article_box">
+                                <div class="article_box_img"> 
+                                    <a href="#"><img src="images/img-50x50-2.jpg" width="50" height="50" alt="image 50 50" /></a>
+                                </div>
+                                <div class="article_box_title"><a href="#">Dental Hygienist and patient</a></div>
+                                <div class="article_box_date">Posted Sept 30, 2012</div>
+                            </div>
+                        </div>
+                        <div class="grid_3">
+                            <h4><span>Cetegories</span></h4>
+                            <ul>
+                                <li><a href="#">Doctors</a></li>
+                                <li><a href="#">Therapy</a></li>
+                                <li><a href="#">Medical</a></li>
+                                <li><a href="#">Healthcare</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+            <div id="footer_wrapper">
+                <div class="container_12 clearfix">
+                    <div class="footerslidingarrow"></div>
+                    <div id="footer">
+                        <div class="copyright_left">&reg; Copyright 2014 Carrillos Team</div>
+                        <div class="copyright_right">Powered by <a href="http://www.thunderthemes.net">ThunderThemes.net</a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="topcontrol" style="position: fixed; bottom: 0px; right: 0px; opacity: 1; cursor: pointer;" title="To the top! To the victory!">
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#carousel').elastislide({
+                imageW: 135,
+                margin: 20,
+                minItems: 4,
+                border: 1,
+            });
+            $(".block_accordion").tabs(".block_accordion .content", {
+                tabs: '.button_outer',
+                effect: 'slide',
+                initialIndex: 0
+            });
+        </script>
+    </body>
 </html>

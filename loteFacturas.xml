@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<lote-masivo id="lote" version="1.0.0">
+    <ambiente>1</ambiente>
+    <tipoEmision>1</tipoEmision>
+    <ruc>1703644805001</ruc>
+    <claveAcceso>1501201401176001321000110010010000010331234567814</claveAcceso>
+    <establecimiento>001</establecimiento>
+    <codDoc>01</codDoc>
+    <comprobantes>
+        <comprobante>
+            <factura id="comprobante" version="1.1.1">
+                <infoTributaria>
+                    <ambiente>1</ambiente>
+                    <tipoEmision>1</tipoEmision>
+                    <razonSocial>SRI</razonSocial>
+                    <nombreComercial>SRI</nombreComercial>
+                    <ruc>1760013210001</ruc>
+                    <claveAcceso>1501201401176001321000110010010000012981234567816</claveAcceso>
+                    <codDoc>01</codDoc>
+                    <estab>001</estab>
+                    <ptoEmi>001</ptoEmi>
+                    <secuencial>000001298</secuencial>
+                    <dirMatriz>SANTA LUCIA</dirMatriz>
+                </infoTributaria>
+                <infoFactura>
+                    <fechaEmision>15/01/2014</fechaEmision>
+                    <dirEstablecimiento>001</dirEstablecimiento>
+                    <contribuyenteEspecial>12312</contribuyenteEspecial>
+                    <obligadoContabilidad>SI</obligadoContabilidad>
+                    <tipoIdentificacionComprador>07</tipoIdentificacionComprador>
+                    <razonSocialComprador>CONSUMIDOR FINAL</razonSocialComprador>
+                    <identificacionComprador>9999999999999</identificacionComprador>
+                    <totalSinImpuestos>78.63</totalSinImpuestos>
+                    <totalDescuento>0.00</totalDescuento>
+                    <totalConImpuestos>
+                        <totalImpuesto>
+                            <codigo>2</codigo>
+                            <codigoPorcentaje>0</codigoPorcentaje>
+                            <baseImponible>79.83</baseImponible>
+                            <valor>0.00</valor>
+                        </totalImpuesto>
+                        <totalImpuesto>
+                            <codigo>3</codigo>
+                            <codigoPorcentaje>3051</codigoPorcentaje>
+                            <baseImponible>78.63</baseImponible>
+                            <valor>1.20</valor>
+                        </totalImpuesto>
+                    </totalConImpuestos>
+                    <propina>0.00</propina>
+                    <importeTotal>79.83</importeTotal>
+                    <moneda>DOLAR</moneda>
+                </infoFactura>
+                <detalles>
+                    <detalle>
+                        <codigoPrincipal>004</codigoPrincipal>
+                        <codigoAuxiliar>SIE004</codigoAuxiliar>
+                        <descripcion>SIERRA 4 PULG IVA 0 ICE 0.1</descripcion>
+                        <cantidad>1</cantidad>
+                        <precioUnitario>78.63</precioUnitario>
+                        <descuento>0</descuento>
+                        <precioTotalSinImpuesto>78.63</precioTotalSinImpuesto>
+                        <detallesAdicionales>
+                            <detAdicional nombre="MARCA" valor="STANLEY"/>
+                        </detallesAdicionales>
+                        <impuestos>
+                            <impuesto>
+                                <codigo>2</codigo>
+                                <codigoPorcentaje>0</codigoPorcentaje>
+                                <tarifa>0.00</tarifa>
+                                <baseImponible>79.83</baseImponible>
+                                <valor>0.00</valor>
+                            </impuesto>
+                            <impuesto>
+                                <codigo>3</codigo>
+                                <codigoPorcentaje>3051</codigoPorcentaje>
+                                <tarifa>0.00</tarifa>
+                                <baseImponible>78.63</baseImponible>
+                                <valor>1.20</valor>
+                            </impuesto>
+                        </impuestos>
+                    </detalle>
+                </detalles>
+            </factura>>
+        </comprobante>
+    </comprobantes>
+    <ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#" Id="xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf">
+        <ds:SignedInfo>
+            <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+            <ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+            <ds:Reference URI="#xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-keyinfo">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <ds:DigestValue>p4U9Np1nKtjWPPwp2mOcIimRjUy+RuQIPr2hVdY5R2E=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference Id="xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-ref0" URI="#lote">
+                <ds:Transforms>
+                    <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                </ds:Transforms>
+                <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <ds:DigestValue>5TJcPkKnKLaCMW/WhSa4wZo+zposDVVQIewvEB/Zihs=</ds:DigestValue>
+            </ds:Reference>
+            <ds:Reference Type="http://uri.etsi.org/01903#SignedProperties" URI="#xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-signedprops">
+                <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                <ds:DigestValue>4oJcIN3liNPst5EQgnx6sAYLO3ckWQ7ZMqZzynpl090=</ds:DigestValue>
+            </ds:Reference>
+        </ds:SignedInfo>
+        <ds:SignatureValue Id="xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-sigvalue">
+            M6OXGh4vLoYhqLo2rfhlUdF2WjY0KRN/kM3uPrgfsxXP4glyoEm93thKj8S5ihQcybsF09YsrSwJ
+            P3Ps+cNyqZSaIQeiwHRSBtDpqqLQ5+M4Mmpf+TjJm4UyU/ApRwRbv/rC8p/oUL5eM2iEZPUKv50G
+            FcFEWbMs9wJzKutPdzlfK+X02XnXzOVdBI7v202H4/0tPhvG20xuZPglwzte3whFn3kxU0mAZk6X
+            bwP8aJWBpgf2DmFR3UxNDVdL1RkrbDU9ZZ8nNqJsdloGj+LJX0dYsHYgq7RoFRyAFFzk7piIKopk
+            JZcJ8Zi9+Dzefp6tVDJxLdti9DZNGmlomGwOMQ==
+        </ds:SignatureValue>
+        <ds:KeyInfo Id="xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-keyinfo">
+            <ds:X509Data>
+                <ds:X509Certificate>
+                    MIIKHzCCCAegAwIBAgIETkHEJjANBgkqhkiG9w0BAQsFADCBoTELMAkGA1UEBhMCRUMxIjAgBgNV
+                    BAoTGUJBTkNPIENFTlRSQUwgREVMIEVDVUFET1IxNzA1BgNVBAsTLkVOVElEQUQgREUgQ0VSVElG
+                    SUNBQ0lPTiBERSBJTkZPUk1BQ0lPTi1FQ0lCQ0UxDjAMBgNVBAcTBVFVSVRPMSUwIwYDVQQDExxB
+                    QyBCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMB4XDTEzMDcyMjE2MzcxNFoXDTE0MDcyMjE3MDcx
+                    NFowga8xCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5DTyBDRU5UUkFMIERFTCBFQ1VBRE9SMTcw
+                    NQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04gREUgSU5GT1JNQUNJT04tRUNJQkNFMQ4w
+                    DAYDVQQHEwVRVUlUTzEzMBEGA1UEBRMKMDAwMDA0OTg0NDAeBgNVBAMTF0dJTkEgQVVST1JBIEJS
+                    SVRPIEJSSVRPMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArsXnU+W6QIbLlpnH6BGC
+                    gi6KKExt4l+NS8l/AkFd24W5D5/ATPIYyoOXDT78GRP9rKKFHg/L5Gf8u0SWEasuwd1WyvhtQ6fO
+                    E3Bxs6CI7MGBrmJee5CjkTFI/sfvre6H6npotLkmgUcXyWWzmdgCF6wSu6e3d5VlI7jF3BU/TtcE
+                    1MGmozunEeHKaEuF08t3GoehaJ7UQK9u4aDi3qKkGUMs3uIODY+UVioKmFWn1gNX8ymvAGPmH+Pk
+                    fTrYBfoILPnDioTDSvAlfRUGE55KsMUANmiyIfeNr21eFRvCQO//boF+5PEKTAznSo2Xlpfzc+Va
+                    EKPSCEtqM13xhxO0GQIDAQABo4IFTTCCBUkwCwYDVR0PBAQDAgeAMGoGA1UdIARjMGEwXwYLKwYB
+                    BAGCqDsCAwEwUDBOBggrBgEFBQcCARZCaHR0cDovL3d3dy5lY2kuYmNlLmVjL3BvbGl0aWNhLWNl
+                    cnRpZmljYWRvL2Z1bmNpb25hcmlvLXB1YmxpY28ucGRmMIGRBggrBgEFBQcBAQSBhDCBgTA+Bggr
+                    BgEFBQcwAYYyaHR0cDovL29jc3AuZWNpLmJjZS5lYy9lamJjYS9wdWJsaWN3ZWIvc3RhdHVzL29j
+                    c3AwPwYIKwYBBQUHMAGGM2h0dHA6Ly9vY3NwMS5lY2kuYmNlLmVjL2VqYmNhL3B1YmxpY3dlYi9z
+                    dGF0dXMvb2NzcDAaBgorBgEEAYKoOwMBBAwTCjE3MTM1MzMxOTYwGwYKKwYBBAGCqDsDAgQNEwtH
+                    SU5BIEFVUk9SQTAVBgorBgEEAYKoOwMDBAcTBUJSSVRPMBUGCisGAQQBgqg7AwQEBxMFQlJJVE8w
+                    JwYKKwYBBAGCqDsDBQQZExdFWFBFUlRPIDIgREUgVEVDTk9MT0dJQTArBgorBgEEAYKoOwMGBB0T
+                    G1NFUlZJQ0lPIERFIFJFTlRBUyBJTlRFUk5BUzAxBgorBgEEAYKoOwMHBCMTIVN0YSBMdWNpYSA2
+                    IGRlIERpY2llbWJyZSB5IENlZHJvczAZBgorBgEEAYKoOwMIBAsTCTAyMzQ2NDg4MTAVBgorBgEE
+                    AYKoOwMJBAcTBVF1aXRvMBcGCisGAQQBgqg7AwwECRMHRUNVQURPUjAdBgorBgEEAYKoOwMLBA8T
+                    DTE3NjAwMTMyMTAwMDEwKwYKKwYBBAGCqDsDCgQdExtTRVJWSUNJTyBERSBSRU5UQVMgSU5URVJO
+                    QVMwIAYKKwYBBAGCqDsDMwQSExBTT0ZUV0FSRS1BUkNISVZPMB0GA1UdEQQWMBSBEmdhYnJpdG9A
+                    c3JpLmdvYi5lYzCCAd0GA1UdHwSCAdQwggHQMIIBzKCCAcigggHEhoHUbGRhcDovL2JjZXFsZGFw
+                    c3VicDEuYmNlLmVjL2NuPUNSTDgzLGNuPUFDJTIwQkFOQ08lMjBDRU5UUkFMJTIwREVMJTIwRUNV
+                    QURPUixsPVFVSVRPLG91PUVOVElEQUQlMjBERSUyMENFUlRJRklDQUNJT04lMjBERSUyMElORk9S
+                    TUFDSU9OLUVDSUJDRSxvPUJBTkNPJTIwQ0VOVFJBTCUyMERFTCUyMEVDVUFET1IsYz1FQz9jZXJ0
+                    aWZpY2F0ZVJldm9jYXRpb25MaXN0P2Jhc2WGNGh0dHA6Ly93d3cuZWNpLmJjZS5lYy9DUkwvZWNp
+                    X2JjZV9lY19jcmxmaWxlY29tYi5jcmykgbQwgbExCzAJBgNVBAYTAkVDMSIwIAYDVQQKExlCQU5D
+                    TyBDRU5UUkFMIERFTCBFQ1VBRE9SMTcwNQYDVQQLEy5FTlRJREFEIERFIENFUlRJRklDQUNJT04g
+                    REUgSU5GT1JNQUNJT04tRUNJQkNFMQ4wDAYDVQQHEwVRVUlUTzElMCMGA1UEAxMcQUMgQkFOQ08g
+                    Q0VOVFJBTCBERUwgRUNVQURPUjEOMAwGA1UEAxMFQ1JMODMwKwYDVR0QBCQwIoAPMjAxMzA3MjIx
+                    NjM3MTRagQ8yMDE0MDcyMjE3MDcxNFowHwYDVR0jBBgwFoAUGPnw++YyHJlmOSrKi7JpfUknv84w
+                    HQYDVR0OBBYEFDEMdzEAWY728J2t5ky43d6qgb0EMAkGA1UdEwQCMAAwGQYJKoZIhvZ9B0EABAww
+                    ChsEVjguMQMCBLAwDQYJKoZIhvcNAQELBQADggIBABg35oOHgpz3B746JGErPU9jaBrgBZJnJgWX
+                    dEilGHbT0wOAcgN81GKffzP8jxgbmYTPXrorTRleJll6tyGn5mFRX0MjFB4RHNAOArCPgSONfboB
+                    kxsqXU418PhDmLyl7HLE4NojVl+WUjqfSsZ2x59E4qLMfm4KfXT2PqxN08AdgBEgDBPfsc0RzMTs
+                    kuDUD2AijvukTMDHK0M3Hwl9xGj84ESBa+Cr/9NS6/80+mCQrAkQBpxORe0pCXywGJbxNSxkuGuh
+                    wTM6t2MYUNWybSBY27KY4c3WkYPofYFmOkOvojD8QWhCiSWv4KsrGrhE4su2I5331G9C6eTB0PMo
+                    oUMTVzpAn+2PqDiXe1cyCMD5NqZSZC++7M3rpdtF9h76yeHNbpWvXmQH+5eN/KqbpV7+T7TSYsJ9
+                    NfNnHObbmi9G92PzAEzVr3kwiqkG2818TQ9Bah1EyRe9boOZLfaW2OJmu2JCQNK+h78WPhDMhmXf
+                    FLfmXGy1WvaAS1BcYe6z5RB2Xq2xRBfn8pC/DOXju2d8R++g13hqksrjqwt0Ah3cjatWBz22uVO/
+                    3fRlJpzGENtJmuzQFUGQ+iEW7sS5VE4yYcLzf6OlWwnyN6IAqamuhib2X+F4Ln6M90IHaVUYhtbX
+                    JxvzgdPuNx2KXqI75L5sdBfNLeeJMbNl/eK3/aw8
+                </ds:X509Certificate>
+            </ds:X509Data>
+        </ds:KeyInfo>
+        <ds:Object>
+            <xades:QualifyingProperties xmlns:xades="http://uri.etsi.org/01903/v1.3.2#" xmlns:xades141="http://uri.etsi.org/01903/v1.4.1#" Target="#xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf">
+                <xades:SignedProperties Id="xmldsig-aae8151c-b8db-4525-bfb1-0b3cebdd1dbf-signedprops">
+                    <xades:SignedSignatureProperties>
+                        <xades:SigningTime>2014-01-20T13:45:42.656-05:00</xades:SigningTime>
+                        <xades:SigningCertificate>
+                            <xades:Cert>
+                                <xades:CertDigest>
+                                    <ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+                                    <ds:DigestValue>3kncjW7iiZDuD8su2zwZiwPwSkqM0g2+UOXvOH7mDrE=</ds:DigestValue>
+                                </xades:CertDigest>
+                                <xades:IssuerSerial>
+                                    <ds:X509IssuerName>CN=AC BANCO CENTRAL DEL ECUADOR,L=QUITO,OU=ENTIDAD DE CERTIFICACION DE INFORMACION-ECIBCE,O=BANCO CENTRAL DEL ECUADOR,C=EC</ds:X509IssuerName>
+                                    <ds:X509SerialNumber>1312932902</ds:X509SerialNumber>
+                                </xades:IssuerSerial>
+                            </xades:Cert>
+                        </xades:SigningCertificate>
+                    </xades:SignedSignatureProperties>
+                    <xades:SignedDataObjectProperties>
+                        <xades:DataObjectFormat ObjectReference="#">
+                            <xades:Description>Firma SRI</xades:Description>
+                            <xades:MimeType>text/xml</xades:MimeType>
+                            <xades:Encoding>UTF-8</xades:Encoding>
+                        </xades:DataObjectFormat>
+                    </xades:SignedDataObjectProperties>
+                </xades:SignedProperties>
+            </xades:QualifyingProperties>
+        </ds:Object>
+    </ds:Signature>
+</lote-masivo>

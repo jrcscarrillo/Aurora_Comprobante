@@ -1,5 +1,6 @@
 <?php
-
+//include 'sriGeneraClaves.php';
+include 'generaClave.php';
 if (isset($_POST['rucForm'])) {
     $userName = "srijrcscarrillo";
     $password = "F9234568!s";
@@ -42,6 +43,8 @@ if (isset($_POST['rucForm'])) {
     $wk_logo = " ";
     $flagDB = chkContribuyente();
     $flagMail = chkMail();
+  //  $flagClave = desdeHastaClave($estab, 1, 1000);
+    $flagClave = asignaClave($estab, $punto);
     echo "sale del envio del mail";
 }
 
