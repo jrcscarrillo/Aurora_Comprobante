@@ -11,6 +11,13 @@
 <link rel="stylesheet" href="css/skin1.css" />
 <link rel="stylesheet" href="css/nivo-slider.css" />
 <link rel="stylesheet" href="css/jqueryslidemenu.css" />
+    <style>
+      #map_canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/jqueryslidemenu.js"></script>
@@ -21,85 +28,101 @@
 <script type="text/javascript" src="js/scrolltop.js"></script>
 <script type="text/javascript" src="js/jquery.toggleElements.pack.js"></script>
 <script type="text/javascript" src="js/jquery.tools.min.js"></script>
-    </head>
-    <body>
-        <div id="wrapper" class="boxed">
-            <div class="top_navigation_container">
-                <div class="top_navigation">
-                    <ul><li><a href="construyendo.html">Contactenos</a></li>
-                        <li><a href="http:\\www.carrillosteam.com">Carrillos Team</a></li>
-                        <li><a href="construyendo.html">Esta Aplicacion</a></li>
-                    </ul>
-                </div>
-                <div class="top_navigation_social">
-                    <p>
-                        AURORA_E
-                    </p>
-                    <ul><li class="social_facebook"><a href="#">Facebook</a></li>
-                        <li class="social_twitter"><a href="#">Twitter</a></li>
-                        <li class="social_dribbble"><a href="#">Dribbble</a></li>
-                        <li class="social_linkedin"><a href="#">Linkedin</a></li>
-                        <li class="social_pinterest"><a href="#">Pinterest</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id="header">
-                <!-- Header start -->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 8,
+    center: new google.maps.LatLng(-0.217420, -78.490605)
+  };
+  map = new google.maps.Map(document.getElementById('map_canvas'),
+      mapOptions);
+}
 
-                <div class="container_12 clearfix">
-                    <!-- Menu container -->
-                    <div class="grid_12">
-                        <!-- Start Menu -->
-                        <div id="topnav" class="jqueryslidemenu">
-                            <ul><li><a href="index.html">Home</a></li>
-                                <li><a href="#">Administracion</a>
-                                    <ul><li><a href="./login.html">Login</a></li>
-                                        <li><a href="./listaContribuyente.html">Lista de Contribuyentes</a></li>
-                                        <li><a href="./addContribuyente.html">Nuevo Contribuyente</a></li>
-                                        <li><a href="./generaClave.html">Generacion de Claves</a></li>
-                                        <li><a href="./listaClaves.html">Lista de Claves</a></li>
-                                        <li><a href="./recuperaClave.html">Recuperacion de Claves</a></li>
-                                    </ul></li>
-                                <li><a href="#">Facturas</a>
-                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
-                                        <li><a href="facturaAut.html">Firmar</a></li>
-                                        <li><a href="facturaFir.html">Enviar</a></li>
-                                        <li><a href="facturaEnv.html">Recibir</a></li>
-                                        <li><a href="facturaPen.html">Autorizadas</a></li>
-                                        <li><a href="#">No Autorizadas</a></li></ul></li>
-                                <li><a href="#">Notas Debito</a>
-                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
-                                        <li><a href="facturaAut.html">Firmar</a></li>
-                                        <li><a href="facturaFir.html">Enviar</a></li>
-                                        <li><a href="facturaEnv.html">Recibir</a></li>
-                                        <li><a href="facturaPen.html">Autorizadas</a></li>
-                                        <li><a href="#">No Autorizadas</a></li></ul></li>
-                                <li><a href="#">Notas Credito</a>
-                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
-                                        <li><a href="facturaAut.html">Firmar</a></li>
-                                        <li><a href="facturaFir.html">Enviar</a></li>
-                                        <li><a href="facturaEnv.html">Recibir</a></li>
-                                        <li><a href="facturaPen.html">Autorizadas</a></li>
-                                        <li><a href="#">No Autorizadas</a></li></ul></li>
-                                <li><a href="#">Retenciones</a>
-                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
-                                        <li><a href="facturaAut.html">Firmar</a></li>
-                                        <li><a href="facturaFir.html">Enviar</a></li>
-                                        <li><a href="facturaEnv.html">Recibir</a></li>
-                                        <li><a href="facturaPen.html">Autorizadas</a></li>
-                                        <li><a href="#">No Autorizadas</a></li></ul></li>
-                                <li><a href="#">Guias</a>
-                                    <ul><li><a href="facturaSin.html">Seleccion</a></li>
-                                        <li><a href="facturaAut.html">Firmar</a></li>
-                                        <li><a href="facturaFir.html">Enviar</a></li>
-                                        <li><a href="facturaEnv.html">Recibir</a></li>
-                                        <li><a href="facturaPen.html">Autorizadas</a></li>
-                                        <li><a href="#">No Autorizadas</a></li></ul></li>
-                            </ul>
-                        </div>
-                    </div><!-- end menu -->
-                </div><!-- end menu container -->
-            </div><!-- Header end -->
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+</head>
+<body>
+    <div id="wrapper" class="boxed">
+        <div class="top_navigation_container">
+            <div class="top_navigation">
+                <ul><li><a href="construyendo.html">Contactenos</a></li>
+                    <li><a href="http:\\www.carrillosteam.com">Carrillos Team</a></li>
+                    <li><a href="construyendo.html">Esta Aplicacion</a></li>
+                </ul>
+            </div>
+            <div class="top_navigation_social">
+                <p>
+                    AURORA_E
+                </p>
+                <ul><li class="social_facebook"><a href="#">Facebook</a></li>
+                    <li class="social_twitter"><a href="#">Twitter</a></li>
+                    <li class="social_dribbble"><a href="#">Dribbble</a></li>
+                    <li class="social_linkedin"><a href="#">Linkedin</a></li>
+                    <li class="social_pinterest"><a href="#">Pinterest</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="header">
+            <!-- Header start -->
+
+            <div class="container_12 clearfix">
+                <!-- Menu container -->
+                <div class="grid_12">
+                    <!-- Start Menu -->
+                    <div id="topnav" class="jqueryslidemenu">
+                        <ul><li><a href="index.html">Home</a></li>
+                            <li><a href="#">Administracion</a>
+                                <ul><li><a href="./login.html">Login</a></li>
+                                    <li><a href="./listaContribuyente.php">Lista de Contribuyentes</a></li>
+                                    <li><a href="./nuevoContribuyente.php">Nuevo Contribuyente</a></li>
+                                    <li><a href="./generaClave.php">Generacion de Claves</a></li>
+                                    <li><a href="./listaClaves.php">Lista de Claves</a></li>
+                                    <li><a href="./recuperaClave.php">Recuperacion de Claves</a></li>
+                                    <li><a href="./logout.php">Log out!t</a></li>
+                                </ul></li>
+                        <li><a href="#">Facturas</a>
+                                <ul><li><a href="./selecFactura.php">Seleccion</a></li>
+                                    <li><a href="./selecFactura.php">Firmar</a></li>
+                                    <li><a href="./selecFactura.php">Enviar</a></li>
+                                    <li><a href="./selecFactura.php">Recibir</a></li>
+                                    <li><a href="./selecFactura.php">Autorizadas</a></li>
+                                    <li><a href="./selecFactura.php">No Autorizadas</a></li></ul></li>
+                            <li><a href="#">Notas Debito</a>
+                                <ul><li><a href="./selecFactura.php">Seleccion</a></li>
+                                    <li><a href="./selecFactura.php">Firmar</a></li>
+                                    <li><a href="./selecFactura.php">Enviar</a></li>
+                                    <li><a href="./selecFactura.php">Recibir</a></li>
+                                    <li><a href="./selecFactura.php">Autorizadas</a></li>
+                                    <li><a href="./selecFactura.php">No Autorizadas</a></li></ul></li>
+                            <li><a href="#">Notas Credito</a>
+                                <ul><li><a href="./selecFactura.php">Seleccion</a></li>
+                                    <li><a href="./selecFactura.php">Firmar</a></li>
+                                    <li><a href="./selecFactura.php">Enviar</a></li>
+                                    <li><a href="./selecFactura.php">Recibir</a></li>
+                                    <li><a href="./selecFactura.php">Autorizadas</a></li>
+                                    <li><a href="./selecFactura.php">No Autorizadas</a></li></ul></li>
+                            <li><a href="#">Retenciones</a>
+                                <ul><li><a href="./selecFactura.php">Seleccion</a></li>
+                                    <li><a href="./selecFactura.php">Firmar</a></li>
+                                    <li><a href="./selecFactura.php">Enviar</a></li>
+                                    <li><a href="./selecFactura.php">Recibir</a></li>
+                                    <li><a href="./selecFactura.php">Autorizadas</a></li>
+                                    <li><a href="./selecFactura.php">No Autorizadas</a></li></ul></li>
+                            <li><a href="#">Guias</a>
+                                <ul><li><a href="./selecFactura.php">Seleccion</a></li>
+                                    <li><a href="./selecFactura.php">Firmar</a></li>
+                                    <li><a href="./selecFactura.php">Enviar</a></li>
+                                    <li><a href="./selecFactura.php">Recibir</a></li>
+                                    <li><a href="./selecFactura.php">Autorizadas</a></li>
+                                    <li><a href="./selecFactura.php">No Autorizadas</a></li></ul></li>
+                        </ul>
+                    </div>
+                </div><!-- end menu -->
+            </div><!-- end menu container -->
+        </div><!-- Header end -->
 
             <div class="container_12 clearfix">
                 <div id="content_wrapper">
@@ -191,32 +214,30 @@
                         <a class="button large orange" href="http://www.sri.gob.ec">S.R.I.</a>
                     </div>
                     <div class="grid_3 columns">  
-                        <h3>Bullet list</h3>
+                        <h3>Procesos en Produccion</h3>
                         <ul class="bullet">
-                            <li>Nullam sit amet ipsum ac diam egestas cursus</li>
-                            <li>In sodales odio quis felis semper in tincidunt</li>
-                            <li>Aenean amet nunc vestibulum consectetur in ornare</li>
-                            <li>Curabitur tristique cursus diam pretium dignissim</li>
-                            <li>Phasellus nec nulla et purus imperdiet tincidunt</li>
-                            <li>Fusce eleifend condimentum tortor pretium vestibulum</li>
-                            <li>Fusce eleifend condimentum tortor pretium vestibulum</li>
+                            <li>Seleccionar los comprobanes desde Quickbooks</li>
+                            <li>Seleccionar los comprobantes para firmar</li>
+                            <li>Enviar los comprobanes firmados</li>
+                            <li>Recibir la respuesta</li>
+                            <li>Revisar autorizados y rechazados</li>
+                            <li>Enviar comprobantes autorizados a los clientes</li>
                         </ul>
-                        <a class="button large blue" href="http://themeforest.net/user/thunderthemes">Purchase Now</a>
+                        <a class="button large blue" href="http://www.carrillosteam.com">Carrillos Team</a>
                     </div>
                     <div class="grid_3 columns">  
-                        <h3>Check and arrow List</h3>
+                        <h3>Procesos Utilitarios</h3>
                         <ul class="check">
-                            <li>Mi lectus mattis massa, quis aliquam erat arcu sodales</li>
-                            <li>Donec varius luctus magna, ac tincidunt eros sit amet</li>
-                            <li class="cross">Nulla eget libero eu est egestas vulputate sed vel urna</li>
-                            <li class="cross">Nulla eget libero eu est egestas vulputate sed vel urna</li>
+                            <li>Lista de Contribuyentes</li>
+                            <li>Ingreso de Usuarios</li>
+                            <li class="cross">Recuperacion de Claves</li>
+                            <li class="cross">Chequear la Base de Datos</li>
                         </ul>
                         <ul class="arrow">
-                            <li>Suspendisse pellentesque risus a nunc egestas imperdiet</li>
-                            <li>Donec et enim congue odio fermentum scelerisque eu ipsum</li>
-                            <li>Maecenas venenatis nibh sit amet ligula malesuada faucibus</li>
+                            <li>Lista de Claves Usadas</li>
+                            <li>Backup de la Base de Datos</li>
                         </ul>
-                        <a class="button large red" href="http://themeforest.net/user/thunderthemes">Purchase Now</a>
+                        <a class="button large red" href="http://www.sri.gob.ec">S.R.I.</a>
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>  
                     <div class="grid_12"><h3>Diagrama General de la Aplicacion</h3>
@@ -255,74 +276,81 @@
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>
                     <div class="grid_6">
-                        <h3 class="bordtitles">Notifications</h3>
+                        <h3 class="bordtitles">Informacion Adicional</h3>
                         <div id="notification_1" class="notification notice closeable">
-                            <p><span>Info!</span> If you're looking for service which isn't listed below.</p>
-                            <a class="close" href="#"></a>
+                            <p><span>Contacto!</span> Mayor informacion ponerse en contacto con </p>
+                            <a href="http://www.carrillosteam.com">Carrillos Team</a>
                         </div>
                         <div id="notification" class="notification error closeable" style="display: block;">
-                            <p><span>Error!</span> Please fill in all the fields required.</p>
-                            <a class="close" href="#"></a>
+                            <p><span>Error!</span> Cualquier error por favor notificarnos a </p>
+                            <a href="http://www.carrillosteam.com">Carrillos Team</a>
                         </div>
                     </div>
                     <div class="grid_6">
-                        <h3 class="bordtitles">Notifications 2</h3>
+                        <h3 class="bordtitles">Notificaciones</h3>
                         <div id="notification_2" class="notification success closeable" style="display: block;">
-                            <p><span>Success!</span> You did it, now relax and enjoy it.</p>
-                            <a class="close" href="#"></a>
+                            <p><span>Sugerencias!</span> REcibimos sugerencias en nuestro sitio.</p>
+                            <a href="http://www.carrillosteam.com">Carrillos Team</a>
                         </div>
                         <div id="notification_3" class="notification warning closeable" style="display: block;">
-                            <p><span>Warning!</span> Change this and that and try again.</p>
-                            <a class="close" href="#"></a>
+                            <p><span>Avisos!</span> Esta aplicacion esta protegida por los derechos de autor</p>
+                            <a href="http://www.carrillosteam.com">Carrillos Team</a>
                         </div>            
                     </div>        
                     <div class="grid_12"><div class="separator line"></div>  
-                        <h3 class="bordtitles">Toggle</h3> 
+                        <h3 class="bordtitles">Desde la Redaccion</h3> 
                         <div class="block_accordion">
-                            <div class="button_outer first"><div class="button_inner">Therapy Description</div></div>
+                            <div class="button_outer first"><div class="button_inner">Ciclo de Desarrollo</div></div>
                             <div class="content" style="display: none;">
                                 <div class="centers_item one">
-                                    <span class="description_left">Day cycles</span>
-                                    <span class="description_right">3hours/day</span>
+                                    <span class="description_left">Analisis de Requerimientos</span>
+                                    <span class="description_right">3 horas/dia</span>
                                 </div>
                                 <div class="centers_item two">
-                                    <span class="description_left">Week cycles</span>
-                                    <span class="description_right">1day/5ml</span>
+                                    <span class="description_left">Investigacion Alternativas</span>
+                                    <span class="description_right">15 dias</span>
                                 </div>
                                 <div class="centers_item one">
-                                    <span class="description_left">Year cycles</span>
-                                    <span class="description_right">250days/year 4ml</span>
+                                    <span class="description_left">Formular el Modelo</span>
+                                    <span class="description_right">15 dias</span>
                                 </div>
                                 <div class="centers_item two">
-                                    <span class="description_left">Therapy name</span>
-                                    <span class="description_right">Enterogermina</span>
+                                    <span class="description_left">Desarrollo del Modelo</span>
+                                    <span class="description_right">180 dias</span>
                                 </div>
                             </div>
-                            <div class="button_outer current"><div class="button_inner">Google Map : Lookup</div></div>
+                            <div class="button_outer current"><div class="button_inner">Mapa en Google: </div></div>
                             <div class="content map" style="display: none;">
-                                <p><iframe width="100%" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?f=q&amp;source=s_q&amp;hl=it&amp;geocode=&amp;q=via+san+giovanni+valdarno,+roma&amp;aq=&amp;sll=45.478225,9.153267&amp;sspn=0.176697,0.528374&amp;ie=UTF8&amp;hq=&amp;hnear=Via+San+Giovanni+Valdarno,+00138+Roma,+Lazio&amp;t=m&amp;z=14&amp;ll=42.006579,12.518659&amp;output=embed"></iframe>
+                                <p><div id="map_canvas"></div>
                                 </p>
                             </div>
-                            <div class="button_outer last"><div class="button_inner">Readable content of a page when looking.</div></div>
+                            <div class="button_outer last"><div class="button_inner">Datos Curiosos sobre esta aplicacion.</div></div>
                             <div class="content last" style="display: none;">
-                                <p>Established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that.
+                                <p>
+                                    <span>Quickbooks</span>
+                                    Es la aplicacion financiera para empresas de bajo presupuesto mas vendida en los EEUU 
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>  
-                    <div class="grid_12"><h3 class="bordtitles">Content with Dropcaps</h3></div>
+                    <div class="grid_12"><h3 class="bordtitles">Preparacion de Datos</h3></div>
                     <div class="grid_3 columns">
-                        <span class="dropcap1">A</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                        <span class="dropcap1">E</span>l cliente antes de iniciar la implementacion de esta aplicacion adquirira una licencia premium de 
+                        Opensync que adquirira en <a href="http://www.synergration.com">Synergration </a> adicionalmente
+                        debera realizar todo el proceso para obtener una licencia valida para certificacion digital. 
+                        
                     </div>
                     <div class="grid_3 columns">
-                        <span class="dropcap1">B</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                        <span class="dropcap1">C</span>arrilos Team sugiere utilizar como servidor de los servicios de internet
+                        la ultima version de <a href="http://httpd.apache.org/">Apache</a> y la base de datos <a href="http://www.mysql.com/">Mysql</a>
                     </div>
                     <div class="grid_3 columns">
-                        <span class="dropcap1">C</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                        <span class="dropcap1">S</span>ervidor de web Apache tiene las siguientes ventajas.
                     </div>
                     <div class="grid_3 columns">
-                        <span class="dropcap1">D</span> Cras consequat porttitor tincidunt. Praesent eu tincidunt lacus. Donec ut neque vitae erat congue venenatis. Duis hendrerit lacinia leo in dignissim. Aliquam erat volutpat.
+                        <span class="dropcap1">M</span>ySQL es una base de datos con varias opciones de instalacion
+                        la version de negocios .
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>
                     <div class="grid_12">
@@ -350,22 +378,16 @@
                                     <td>Archivos en XML generados</td>
                                 </tr>
                                 <tr>
-                                    <td>Doctor #3</td>
-                                    <td>Description</td>
-                                    <td>Therapy 1</td>
-                                    <td>Therapy 2</td>
+                                    <td>Enviar Comprobantes</td>
+                                    <td>Los archivos XML son enviados al SRI utilizando los servicios de internet del SRI</td>
+                                    <td>Tener los nombres de los archivos XML generados</td>
+                                    <td>Archivo con autorizacion o con los mensajes de error</td>
                                 </tr>
                                 <tr>
-                                    <td>Doctor #4</td>
-                                    <td>Description</td>
-                                    <td>Therapy 1</td>
-                                    <td>Therapy 2</td>
-                                </tr>
-                                <tr>
-                                    <td>Doctor #5</td>
-                                    <td>Description</td>
-                                    <td>Therapy 1</td>
-                                    <td>Therapy 2</td>
+                                    <td>Enviar Autorizados</td>
+                                    <td>Se envian los comprobantes autorizados a los clientes</td>
+                                    <td>Cada cliente debera tener una direccion de correo electronico valida</td>
+                                    <td>Notificacion del cliente</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -377,44 +399,49 @@
                 <div class="pre_footer_wrapper">
                     <div id="footersliding" class="container_12 clearfix">
                         <div class="grid_3">
-                            <h4><span>Text widget</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>                
+                            <h4><span>Carrillos Team</span></h4>
+                            <p>
+                                Somos un grupo de empresarios que proveemos de soluciones de desarrollo de software,
+                                asesoramiento financiero para inversiones en las bolsas de valores de los EEUU.
+                                Otro equipo esta dedicado a la investigacion biologica y quimica de algunas enfermedades
+                                asi como tambien buscando soluciones para evitar la polucion.
+                            </p>                
 
 
                         </div>
                         <div class="grid_3">
-                            <h4><span>Latest articles</span></h4>
+                            <h4><span>Noticias del Mundo</span></h4>
                             <ul>
-                                <li><a href="#">Examination of symptoms using latest technologies</a></li>
-                                <li><a href="#">Ask our doctor a question!</a></li>
-                                <li><a href="#">Health and care?</a></li>
-                                <li><a href="#">Dental Hygienist Career</a></li>
+                                <li><a href="#">Fifa 2014 world cup</a></li>
+                                <li><a href="#">Tennis: Wimbledon 2014</a></li>
+                                <li><a href="#">La NBA</a></li>
+                                <li><a href="#">La revista Selecciones</a></li>
                             </ul>
                         </div>
                         <div class="grid_3">
-                            <h4><span>Most read</span></h4>
+                            <h4><span>Mas interesante</span></h4>
                             <div class="article_box">
                                 <div class="article_box_img"> 
-                                    <a href="#"><img src="images/img-50x50.jpg" width="50" height="50" alt="image 50 50" /></a>
+                                    <a href="#"><img src="images/noticia1.png" width="50" height="50" alt="image 50 50" /></a>
                                 </div>
-                                <div class="article_box_title"><a href="#">The ultimate cure for patients</a></div>
-                                <div class="article_box_date">Posted Sept 30, 2012</div>
+                                <div class="article_box_title"><a href="http://www.bbc.com/news/technology-27935972">Android and Windows to get kill switch</a></div>
+                                <div class="article_box_date">Publicado junio 20, 2014</div>
                             </div>                    
                             <div class="article_box">
                                 <div class="article_box_img"> 
-                                    <a href="#"><img src="images/img-50x50-2.jpg" width="50" height="50" alt="image 50 50" /></a>
+                                    <a href="#"><img src="images/noticia2.png" width="50" height="50" alt="image 50 50" /></a>
                                 </div>
-                                <div class="article_box_title"><a href="#">Dental Hygienist and patient</a></div>
-                                <div class="article_box_date">Posted Sept 30, 2012</div>
+                                <div class="article_box_title"><a href="http://www.elcomercio.com/actualidad/operadoras-4g-ecuador-licitacion.html">Ecuador ingresa al 4g con rezago</a></div>
+                                <div class="article_box_date">Publicado Junio 20, 2014</div>
                             </div>
                         </div>
                         <div class="grid_3">
-                            <h4><span>Cetegories</span></h4>
+                            <h4><span>Categorias</span></h4>
                             <ul>
-                                <li><a href="#">Doctors</a></li>
-                                <li><a href="#">Therapy</a></li>
-                                <li><a href="#">Medical</a></li>
-                                <li><a href="#">Healthcare</a></li>
+                                <li><a href="#">Musica</a></li>
+                                <li><a href="#">Tennis</a></li>
+                                <li><a href="#">Futbol</a></li>
+                                <li><a href="#">Pais</a></li>
                             </ul>
                         </div>
                     </div>

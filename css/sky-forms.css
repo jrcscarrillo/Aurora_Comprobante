@@ -707,6 +707,11 @@
 .sky-form .button.button-secondary {
 	background-color: #b3b3b3;
 }
+
+.sky-form .button-primary {
+    display: inline-block;
+    width: 50px;
+}
 .sky-form .icon-append,
 .sky-form .icon-prepend {
 	color: #ccc;
