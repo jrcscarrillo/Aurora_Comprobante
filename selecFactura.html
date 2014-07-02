@@ -1,58 +1,37 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Nuevo Contribuyente</title>
+    <head>
+	<title>Seleccionar Facturas</title>
 
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-		<link rel="stylesheet" href="./css/reset.css" />
-		<link rel="stylesheet" href="./css/text.css" />
-		<link rel="stylesheet" href="./css/960_12_col.css" />
-		<link rel="stylesheet" href="./css/skin1.css" />
-		<link rel="stylesheet" href="./css/nivo-slider.css" />
-		<link rel="stylesheet" href="./css/jqueryslidemenu.css" />
-		<link rel="stylesheet" href="./css/demo.css">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
-		<link rel="stylesheet" href="./css/jquery.dataTables.css" />
-		<link rel="stylesheet" href="./css/jquery.dataTables_themeroller.css" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <link rel="stylesheet" href="./css/reset.css" />
+        <link rel="stylesheet" href="./css/text.css" />
+        <link rel="stylesheet" href="./css/960_12_col.css" />
+        <link rel="stylesheet" href="./css/skin1.css" />
+        <link rel="stylesheet" href="./css/nivo-slider.css" />
+        <link rel="stylesheet" href="./css/jqueryslidemenu.css" />
+        <link rel="stylesheet" href="./css/demo.css">
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="./css/jquery.dataTables.css" />
+        <link rel="stylesheet" href="./css/jquery.dataTables_themeroller.css" />
+        <link rel="stylesheet" href="./css/bootstrap.css" />
 
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
-		<script type="text/javascript" src="./js/jquery.dataTables.js"></script>
-		<script type="text/javascript" src="./js/dataTables.fixedColumns.js"></script>
-		<script type="text/javascript" src="./js/jqueryslidemenu.js"></script>
-		<script type="text/javascript" src="./js/jquery.nivo.slider.js"></script>
-		<script type="text/javascript" src="./js/jquery.bxSlider.min.js"></script>
-		<script type="text/javascript" src="./js/jquery.elastislide.js"></script>
-		<script type="text/javascript" src="./js/custom.js"></script>
-		<script type="text/javascript" src="./js/scrolltop.js"></script>
-    <script> 
-      $(document).ready(function(){ 
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="./js/dataTables.fixedColumns.js"></script>
+        <script type="text/javascript" src="./js/jqueryslidemenu.js"></script>
+        <script type="text/javascript" src="./js/jquery.nivo.slider.js"></script>
+        <script type="text/javascript" src="./js/jquery.bxSlider.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.elastislide.js"></script>
+        <script type="text/javascript" src="./js/custom.js"></script>
+        <script type="text/javascript" src="./js/scrolltop.js"></script>
+        <script type="text/javascript" src="./js/json2.js"></script>
+        <script type="text/javascript" src="./js/selectFactura.js"></script>
 
-        var table = $("#the_table").dataTable({ 
-          "processing":true,
-          "serverSide":true,
-          "scrollX":true,
-          "scrollColapse":true,
-          "columns": [
-              { "width": "10%"},
-              { "width": "35%"},
-              { "width": "25%"},
-              { "width": "5%"},
-              { "width": "5%"},
-              { "width": "20%"},
-              { "width": "20%"},
-              { "width": "5%"}
-          ],
-          "ajax": "./include/getContribuyente.php"
-        }); 
-        new $.fn.dataTable.FixedColumns( table, {
-            leftColumns: 1
-        } );
-      }); 
-    </script> 
-	</head>
+</head>
 <body>
     <div id="wrapper" class="boxed">
         <div class="top_navigation_container">
@@ -135,18 +114,21 @@
 <!--
 	Definicion de la tabla con las columnas de datos
 -->
-    <div> 
+    <div>
+        <a id="button" class="btn btn-success">
+            <i class="fa fa-flag fa-2x pull-left"></i> Procesar<br>Seleccionados</a>
+    </div>
+    <div>
       <table id="the_table" class="display" cellspacing="0" width="100%"> 
         <thead> 
           <tr>
-            <th>RUC</th>
+            <th>Numero Factura</th>
             <th>Razon Social</th>
-            <th>Nombre Comercial</th>
-            <th>Establecimiemto</th>
-            <th>Punto Emision</th>
-            <th>Direccion Matriz</th>
-            <th>Direccion Emisor</th>
-            <th>Contabilidad?</th>
+            <th>Fecha Emision</th>
+            <th>Subtotal</th>
+            <th>Impuestos</th>
+            <th>Total</th>
+            <th>Estado</th>
           </tr> 
         </thead> 
         <tbody>         
