@@ -42,7 +42,8 @@
        $("#button").click( function() 
        {
            var total = 0;
-           var pasa = '{ "Facturas": [ ';
+//           var pasa = '{ "Facturas": [ ';
+           var pasa = '';
            $(".selected").map( function()
            {
                var $fila = $(this);
@@ -55,18 +56,18 @@
                pasa += '"Valor":"' + valor + '"},';
                console.log( "Factura: " + numero + " Cliente: " + cliente + " Acumulado Ventas: " + total);
            }).get();
-            pasa = pasa.substring(0, pasa.length-1);
-            pasa += ']}';
+//            pasa = pasa.substring(0, pasa.length-1);
+//            pasa += ']}';
 //            alert("Este es para JSON: " + pasa);
 //            var jsonString = JSON.stringify(pasa);
 //            alert("Este es para JSON: " + jsonString);
-            
+           $.ajax()
            $.ajax(
                    {
                     "url":"./include/selecFactura.php",
-                    "type":"POST",
-                    "data":pasa,
-                    "dataType":"text",
+                    "method":"POST",
+                    "data":{"Facturas": pasa},
+                    "dataType":"html",
 //                    "contentType": "application/json; charset=UTF-8",
                     "beforeSend": function(){
 //                        alert("Este es para JSON: " + pasa);
@@ -94,7 +95,7 @@
  *      code to run regardless of success or failure
  */
                     complete: function( xhr, status ) {
-                    alert( "The request is complete!" );
+                        $("div.boxed").html('<br><br><br><br><hr><br><br><br><br><span style="color:red;text-align:center">Proceso de Seleccion de Facturas ha concluido satisfactoriamente</span><br><br><a href="index.html">CONTINUAR</a><br><br><br><br><hr><br><br><br><br>');
                     }
                    });
        });

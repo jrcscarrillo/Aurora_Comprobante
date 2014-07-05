@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp/www/Aurora/include/selecFactura.php</file>
-            <file>file:/C:/wamp/www/Aurora/js/selectFactura.js</file>
+            <file>file:/C:/wamp/www/Aurora/index.html</file>
+            <file>file:/C:/wamp/www/Aurora/js/selecContribuyente.js</file>
+            <file>file:/C:/wamp/www/Aurora/include/getContribuyente.php</file>
+            <file>file:/C:/wamp/www/Aurora/selecFactura.php</file>
+            <file>file:/C:/wamp/www/Aurora/include/selecContribuyente.php</file>
+            <file>file:/C:/wamp/www/Aurora/selecContribuyente.html</file>
         </group>
     </open-files>
 </project-private>

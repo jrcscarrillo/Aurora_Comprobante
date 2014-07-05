@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-	<title>Seleccionar Facturas</title>
+	<title>Seleccionar Contribuyente</title>
 
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
@@ -29,7 +29,7 @@
         <script type="text/javascript" src="./js/custom.js"></script>
         <script type="text/javascript" src="./js/scrolltop.js"></script>
         <script type="text/javascript" src="./js/json2.js"></script>
-        <script type="text/javascript" src="./js/selectFactura.js"></script>
+        <script type="text/javascript" src="./js/selecContribuyente.js"></script>
 
 </head>
 <body class="bg-blue">
@@ -117,13 +117,14 @@
       <table id="the_table" class="display" cellspacing="0" width="100%"> 
         <thead> 
           <tr>
-            <th>Numero Factura</th>
+            <th>RUC</th>
             <th>Razon Social</th>
-            <th>Fecha Emision</th>
-            <th>Subtotal</th>
-            <th>Impuestos</th>
-            <th>Total</th>
-            <th>Estado</th>
+            <th>Nombre Comercial</th>
+            <th>Establecimiemto</th>
+            <th>Punto Emision</th>
+            <th>Direccion Matriz</th>
+            <th>Direccion Emisor</th>
+            <th>Contabilidad?</th>
           </tr> 
         </thead> 
         <tbody>         
@@ -137,7 +138,7 @@
 </div>
 <div>
     <a id="button" class="btn btn-success">
-        <i class="fa fa-flag fa-2x pull-left"></i> Procesar<br>Seleccionados</a>
+        <i class="fa fa-flag fa-2x pull-left"></i> Procesar<br>Seleccionado</a>
 </div>
 	<div id="footer_wrapper">
 		<div class="container_12 clearfix">

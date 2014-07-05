@@ -8,21 +8,21 @@
 session_start();
 
 if ($_SESSION['carrillosteam'] == 'carrillosteam') {
-    var_dump($_SESSION);
+//    var_dump($_SESSION);
     require 'paraMensajes.html';
     echo '<script type="text/javascript">'.
         "$(document).ready(function(){".
-        "$('#mensaje').html('usuario previamente logeado');".
+        "$('#mensaje').text('usuario previamente logeado');".
         "})".
         "</script>";
         exit();
 }
 
 include 'conectaBaseDatos.php';
-echo 'Con Get \n\n';
-var_dump($_GET);
-echo '\nCon Post \n\n';
-var_dump($_POST);
+//echo 'Con Get \n\n';
+//var_dump($_GET);
+//echo '\nCon Post \n\n';
+//var_dump($_POST);
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -32,13 +32,13 @@ if (isset($_POST['email'])) {
     require 'paraContinuar.html';
     echo '<script type="text/javascript">'.
         "$(document).ready(function(){".
-        "$('#mensaje').html('No ha ingresado datos');".
+        "$('#mensaje').text('No ha ingresado datos');".
         "})".
         "</script>"; 
         exit();
 }
 function loginUsuario($email, $password) {
-    var_dump($GLOBALS);
+//    var_dump($GLOBALS);
 
         $passencriptada = hash(sha256, $password);
     

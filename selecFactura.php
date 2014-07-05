@@ -7,14 +7,22 @@
  */
 
 session_start();
+include './include/mensajes.php';
 if ($_SESSION['carrillosteam'] == 'carrillosteam') {
-    require ('selecFactura.html');
+    
+    /*
+     *  Se controla que en la sesion este presente el usuario con la autorizacion
+     *  y tambien que haya seleccionado el contribuyente que facturara
+     */
+    if (isset($_SESSION['establecimiento']) and isset($_SESSION['puntoemision'])) {
+        require ('selecFactura.html');
+        exit();
+    } else {
+        require ('selecContribuyente.html');
+        exit();
+    }
+} else {
+    $pasaerr = "'*** ERROR Usuario no ha ingresado al sistema'";
+    mensajea($pasaerr);
     exit();
 }
-require ('paraContinuar.html');
-echo '<script type="text/javascript">'.
-        "$(document).ready(function(){".
-        "$('#mensaje').html('Usuario no ha ingresado al sistema');".
-        "})".
-        "</script>";
-       exit();

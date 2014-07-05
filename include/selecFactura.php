@@ -4,107 +4,79 @@
  * Fecha:   Julio 1, 2014
  * Proyecto: Comprobantes Electronicos
  */
-var_dump($GLOBALS);
-include 'conectaBaseDatos.php';
+//var_dump($GLOBALS);
+    session_start();
+    include 'conectaBaseDatos.php';
+    require 'mensajes.php';
+    error_reporting(E_ALL); 
+    ini_set('display_errors', 1);
 
 if (isset($_POST['Facturas'])) {
-    $facturas = json_decode($_POST['Facturas']);
-//    var_dump($facturas);
-    foreach ($facturas as $key => $value) {
-        echo "Estos Datos {$key} is {$value}\n";
-    }
-    echo "Termino Proceso de Seleccion";
-}
-
-function chkUsuario() {
-    global $id, $wk_id, $wk_email, $wk_nombre, $wk_apellido, $wk_encriptada, $wk_habilita, $wk_estado, $wk_password, $email, $password, $nombre, $apellido;
-    global $encriptada, $habilita, $estado;
-    $db = db_connect();
-    if ($db->connect_errno) {
-        die('Error de Conexion: ' . $db->connect_errno);
-    }
-    $stmt = "";
-    $sql = "select * from Usuarios where UsuariosEmail=? and UsuariosPassword=?";
-    $stmt = $db->prepare($sql) or die(mysqli_error($db));
-    $stmt->bind_param("ss", $email, $encriptada);
-    $stmt->bind_result($wk_id, $wk_email, $wk_encriptada, $wk_habilita, $wk_nombre, $wk_apellido, $wk_estado);
-    $existe = $stmt->execute();
-    if ($stmt->num_rows() == 0) {
-        $stmt->close();
-        echo "No existe usuario\r\n";
-        $flagNew = nuevoUsuario();
-    } else {
-        $stmt->close();
-        echo "error contribuyente ya existe\r\n";
-    }
-
-    /* close statement */
-    $db->close();
-    return true;
-}
-
-function nuevoUsuario() {
-    global $id, $wk_id, $wk_email, $wk_nombre, $wk_apellido, $wk_encriptada, $wk_habilita, $wk_estado, $wk_password, $email, $password, $nombre, $apellido;
-    global $encriptada, $habilita, $estado;
-    $db = db_connect();
-    if ($db->connect_errno) {
-        die('Error de Conexion: ' . $db->connect_errno);
-    }
-    $stmt = "";
-    $sql = "insert into Usuarios(UsuariosEmail, UsuariosPassword, UsuariosHabilitado, UsuariosNombre, UsuariosApellido, UsuariosEstado";
-    $sql .= ") values(?, ?, ?, ?, ?, ?)";
-    $stmt = $db->prepare($sql) or die(mysqli_error($db));
-    echo "Id: " . $id . " Email: " . $email . "\n" . "Nombres: " . $nombre . " Apellidos: " . $apellido;
-    
-    $stmt->bind_param("ssissi", $email, $encriptada, $habilita, $nombre, $apellido, $estado);
-    $stmt->execute();
-    // Get the ID generated from the previous INSERT operation
-    $newId = $db->insert_id;
-    $sql = "select * from Usuarios where idUsuarios=?";
-    if ($selectTaskStmt = $db->prepare($sql)) {
-        $selectTaskStmt->bind_param("i", $newId);
-        $selectTaskStmt->bind_result($wk_id, $wk_email, $wk_encriptada, $wk_habilita, $wk_nombre, $wk_apellido, $wk_estado);
-        $selectTaskStmt->execute();
-        if ($selectTaskStmt->fetch()) {
-            echo "Usuario adicionado\r\n";
-            $flag = chkMail();
-        } else {
-            echo "error usuario no se adiciono\r\n";
+//    $facturas = $_POST['Facturas'];
+    $facturas = str_replace("},", "}|", $_POST['Facturas']);
+    $factura = explode("|", $facturas);
+    for($i=0; $i < count($factura); $i++) {
+    $registro = json_decode($factura[$i]);
+//    var_dump($factura[$i]);
+    if(strlen($factura[$i]) != 0){
+        foreach ($registro as $key => $value) {
+//            echo "Estos Datos {$key} is {$value}\n";
+            if($key === "Numero"){
+                $wk_factura = $value;
+            } elseif ($key === "Cliente") {
+                $wk_cliente = $value;
+            } elseif ($key === "Valor") {
+                $wk_valor = $value;
+                chkFactura($wk_factura, $wk_cliente, $wk_valor);
+            }
         }
     }
-}
-
-function chkMail() {
-    global $id, $wk_id, $wk_email, $wk_nombre, $wk_apellido, $wk_encriptada, $wk_habilita, $wk_estado, $wk_password, $email, $password, $nombre, $apellido;
-    global $encriptada, $habilita, $estado;
-    require 'PHPMailerAutoload.php';
-    require 'PHPMailer.php';
-//Create a new PHPMailer instance
-    $mail = new PHPMailer();
-// Set PHPMailer to use the sendmail transport
-    $mail->isSendmail();
-//Set who the message is to be sent from
-    $mail->setFrom('info@carrillosteam.com', 'Juan Carrillo');
-//Set an alternative reply-to address
-    $mail->addReplyTo('support@carrillosteam.com', 'Juan Carrillo');
-//Set who the message is to be sent to
-    $mail->addAddress($email, $nombre, $apellido);
-//Set the subject line
-    $mail->Subject = 'Utilizando Comprobantes Electronicos ?';
-//Read an HTML message body from an external file, convert referenced images to embedded,
-//convert HTML into a basic plain-text alternative body
-    //$mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
-//Replace the plain text body with one created manually
-    $body = '<div><b>Nombre: </b>' . $nombre . "<br>" . '<b>Apellido: </b>' . $apellido. "<br>";
-    $body .= '<br><hr><br><span>Usted se ha registrado en el sistema de comprobantes electronicos, se enviara un email indicandole que esta habilitado</span></div>'; 
-    $mail->msgHTML($body);
-    $mail->AltBody = 'This is a plain-text message body';
-
-    if (!$mail->send()) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
-    } else {
-        echo "Message sent!";
     }
+} 
+
+function chkFactura($wk_factura, $wk_cliente, $wk_valor) {
+    $db = db_connect();
+    if ($db->connect_errno) {
+        die('Error de Conexion: ' . $db->connect_errno);
+    }
+//    echo "Numero: " . $wk_factura . " \n";
+    $stmt = "";
+    $sql = "select TxnID, TxnNumber, CustomerRef_FullName, CustomField10 from invoice where TxnNumber=?";
+    $stmt = $db->prepare($sql) or die(mysqli_error($db));
+   
+    $stmt->bind_param("s", $wk_factura);
+    $flag = FALSE;
+    $existe = $stmt->execute();
+    $stmt->bind_result($db_id, $db_numero, $db_cliente, $db_estado);        /* fetch values */
+            while ($stmt->fetch()) {
+                $flag = TRUE;
+        //        echo 'Si encontro al ' . $db_cliente . ' que tiene la factura ' . $db_numero;
+            }
+    /* close statement */
+    $stmt->close();
+    $db->close();
+            if($flag){
+                updateFactura($wk_factura, $wk_cliente, $wk_valor);
+            } 
 }
 
-?>
+function updateFactura($wk_factura, $wk_cliente, $wk_valor) {
+    $db = db_connect();
+    if ($db->connect_errno) {
+        die('Error de Conexion: ' . $db->connect_errno);
+    }
+    $stmt = "";
+    $sql = "UPDATE invoice SET CustomField10 = 'SELECCIONADA' where TxnNumber=?";
+    $stmt = $db->prepare($sql) or die(mysqli_error($db));
+   
+    $stmt->bind_param("s", $wk_factura);
+    $flag = FALSE;
+    $existe = $stmt->execute();
+    $nroRegistrosAfectados = $stmt->affected_rows;
+    if ($nroRegistrosAfectados > 0) {
+        $flag = TRUE;
+    }
+        /* close statement */
+    $stmt->close();
+    $db->close();
+}
