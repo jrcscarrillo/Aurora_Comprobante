@@ -7,10 +7,6 @@
 //var_dump($GLOBALS);
     session_start();
     include 'conectaBaseDatos.php';
-    require 'mensajes.php';
-    error_reporting(E_ALL); 
-    ini_set('display_errors', 1);
-
 if (isset($_POST['Facturas'])) {
 //    $facturas = $_POST['Facturas'];
     $facturas = str_replace("},", "}|", $_POST['Facturas']);
@@ -56,9 +52,12 @@ function chkFactura($wk_factura, $wk_cliente, $wk_valor) {
     $stmt->close();
     $db->close();
             if($flag){
-                updateFactura($wk_factura, $wk_cliente, $wk_valor);
+                $control = updateFactura($wk_factura, $wk_cliente, $wk_valor);
             } 
-}
+    if($control){
+        echo '{ "Siga": "GO" }';
+    }
+ }
 
 function updateFactura($wk_factura, $wk_cliente, $wk_valor) {
     $db = db_connect();
@@ -79,4 +78,5 @@ function updateFactura($wk_factura, $wk_cliente, $wk_valor) {
         /* close statement */
     $stmt->close();
     $db->close();
+    return $flag;
 }

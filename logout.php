@@ -10,7 +10,7 @@ session_destroy();
 require ('paraContinuar.html');
 echo '<script type="text/javascript">'.
         "$(document).ready(function(){".
-        "$('#mensaje').html('Usuario ha dejado el sistema');".
+        "$('#mensaje').text('Usuario ha dejado el sistema');".
         "})".
         "</script>";
        exit();

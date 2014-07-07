@@ -28,19 +28,10 @@
         $('#the_table tbody').on( 'click', 'tr', function () {
             $(this).toggleClass('selected');
         } );
- /*
-        $('#button').click( function () {
-            $( ".selected" ).each(function( index ) {
-            console.log( index + ": " + $( this ).text() );
-            $(this).find('td').each(function( columna )
-            {
-                console.log( columna + " : dato :") + $( this );
-            });
-            });
-        } );
-        */
-       $("#button").click( function() 
+
+       $("#button").click( function(e) 
        {
+           e.preventDefault();
            var total = 0;
 //           var pasa = '{ "Facturas": [ ';
            var pasa = '';
@@ -56,48 +47,40 @@
                pasa += '"Valor":"' + valor + '"},';
                console.log( "Factura: " + numero + " Cliente: " + cliente + " Acumulado Ventas: " + total);
            }).get();
-//            pasa = pasa.substring(0, pasa.length-1);
-//            pasa += ']}';
-//            alert("Este es para JSON: " + pasa);
-//            var jsonString = JSON.stringify(pasa);
-//            alert("Este es para JSON: " + jsonString);
-           $.ajax()
+       
            $.ajax(
                    {
                     "url":"./include/selecFactura.php",
                     "method":"POST",
                     "data":{"Facturas": pasa},
-                    "dataType":"html",
+                    "dataType":"json",
 //                    "contentType": "application/json; charset=UTF-8",
                     "beforeSend": function(){
 //                        alert("Este es para JSON: " + pasa);
                     },
-/*      code to run if the request succeeds;
-        the response is passed to the function
-*/
-                    success: function( json ) {
-                    $( "<h1/>" ).text( json.title ).appendTo( "body" );
-                    $( "<div class=\"content\"/>").html( json.html ).appendTo( "body" );
+
+                    success: function( datos ) {
+                        correMensaje( datos ) 
                     },
- /*
-  *     code to run if the request fails; the raw request and
-  *     status codes are passed to the function
-  */ 
 
                     error: function( xhr, status, errorThrown ) {
-                    alert( "Sorry, there was a problem!" );
-                    console.log( "Error: " + errorThrown );
-                    console.log( "Status: " + status );
-                    console.dir( xhr );
+                        document.cookie='Errores="*** ERROR No se han seleccionado las facturas ***"';
+                        window.location.href = window.location.pathname.substring( 0, window.location.pathname.lastIndexOf( '/' ) + 1 ) + '../Aurora/paraMensajes.php';
+                        console.log( "Error: " + errorThrown );
+                        console.log( "Status: " + status );
+                        console.dir( xhr );
                     },
- 
-/*
- *      code to run regardless of success or failure
- */
+
                     complete: function( xhr, status ) {
-                        $("div.boxed").html('<br><br><br><br><hr><br><br><br><br><span style="color:red;text-align:center">Proceso de Seleccion de Facturas ha concluido satisfactoriamente</span><br><br><a href="index.html">CONTINUAR</a><br><br><br><br><hr><br><br><br><br>');
+//                        $("div.boxed").html('<br><br><br><br><hr><br><br><br><br><span style="color:red;text-align:center">Proceso de Seleccion de Facturas ha concluido satisfactoriamente</span><br><br><a href="index.html">CONTINUAR</a><br><br><br><br><hr><br><br><br><br>');
                     }
                    });
+       return false;
        });
       }); 
- 
+  function correMensaje( datos ){
+       if( datos = "GO" ){
+            document.cookie='Continuar="---Se han seleccionado con exito las facturas desde Quickbooks---"';
+             window.location.href = window.location.pathname.substring( 0, window.location.pathname.lastIndexOf( '/' ) + 1 ) + '../Aurora/paraContinuar.php';
+       }
+ }

@@ -41,7 +41,9 @@ if (isset($_POST['Contribuyente'])) {
     echo "Termino Proceso de Seleccion";
     exit();
 } else {
+    header("content-type: text/html");
     $pasaerr = "*** ERROR no ha seleccionado contribuyente";
+    echo("*** ERROR no ha seleccionado contribuyente");
     mensajea($pasaerr);
     exit();
 }
@@ -87,7 +89,9 @@ function updateSession($wk_ruc, $wk_razon, $wk_comercial, $wk_estab, $wk_punto, 
     $_SESSION['emisor'] = $wk_emisor;
     $_SESSION['contabilidad'] = $wk_contab;
     echo 'Estas son las variables: ' . $wk_ruc + ' ' . $wk_razon;
+    header("content-type: text/html");
     $pasaSuccess = "*** Continuar ha seleccionado contribuyente";
+    echo("*** Continuar ha seleccionado contribuyente");
     continua($pasaSuccess);
     exit();
 }

@@ -6,7 +6,6 @@
  * Proyecto: Comprobantes Electronicos
  */
 session_start();
-require 'mensajes.php';
 include 'conectaBaseDatos.php';
 //var_dump($GLOBALS);
 /*
@@ -14,30 +13,44 @@ include 'conectaBaseDatos.php';
  *      2. Revisar que se hayan seleccionados las fechas para procesar
  */
 if (!isset($_SESSION['establecimiento']) or !isset($_SESSION['puntoemision'])) {
-    $pasaerr = "*** ERROR No tiene seleccionado emisor";
-    mensajea($pasaerr);
-    exit();
+    require 'paraMensajes.html';
+    echo '<script type="text/javascript">'.
+        "$(document).ready(function(){".
+        "$('#mensaje').text('*** ERROR No tiene seleccionado emisor');".
+        "})".
+        "</script>";
+        exit();
 }
 if (isset($_GET['start'])) {
     $fechaFin = $_GET['finish'];
     $fechaInicio = $_GET['start'];
+    $archivo = $_GET['archivo'];
     $inicioDB = strtotime($fechaInicio);
     $finDB = strtotime($fechaFin);
 //    echo "Fecha con strtotime : " . $inicioDB;
     $fechaInicio = date('Y-m-d H:i:s', $inicioDB);
     $fechaFin = date('Y-m-d H:i:s', $finDB);
 //    echo "Fecha con date : " . $inicio;
-    firmaFactura($fechaInicio, $fechaFin);
-    $pasaSuccess = "'*** Continuar ha firmado las facturas pendientes'";
-    continua($pasaSuccess);
-    exit();
+   
+    firmaFactura($fechaInicio, $fechaFin, $archivo);
+    require 'paraContinuar.html';
+    echo '<script type="text/javascript">'.
+        "$(document).ready(function(){".
+        "$('#mensaje').text('--- Facturas firnadas satisfactoriamente ---');".
+        "})".
+        "</script>";
+        exit();
 } else {
-    $pasaerr = "'*** ERROR No ha ingresado las fechas'";
-    mensajea($pasaerr);
-    exit();
+    require 'paraMensajes.html';
+    echo '<script type="text/javascript">'.
+        "$(document).ready(function(){".
+        "$('#mensaje').text('*** ERROR No ha seleccionado fechas de proceso');".
+        "})".
+        "</script>";
+        exit();
 }
 
-function firmaFactura($fechaInicio, $fechaFin) {
+function firmaFactura($fechaInicio, $fechaFin, $archivo) {
     $db = db_connect();
     if ($db->connect_errno) {
         die('Error de Conexion: ' . $db->connect_errno);
@@ -248,7 +261,7 @@ function firmaFactura($fechaInicio, $fechaFin) {
         $root->appendChild($factura);
     }
     $doc->appendChild($root);
-    $doc->save("./tmp/prueba.xml");
+    $doc->save("../tmp/$archivo");
     /* close statement */
     $stmt->close();
     $db->close();

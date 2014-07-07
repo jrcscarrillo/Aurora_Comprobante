@@ -7,7 +7,6 @@
  */
 
 session_start();
-include './include/mensajes.php';
 if ($_SESSION['carrillosteam'] == 'carrillosteam') {
     
     /*
@@ -22,7 +21,11 @@ if ($_SESSION['carrillosteam'] == 'carrillosteam') {
         exit();
     }
 } else {
-    $pasaerr = "'*** ERROR Usuario no ha ingresado al sistema'";
-    mensajea($pasaerr);
-    exit();
+    require 'paraMensajes.html';
+    echo '<script type="text/javascript">'.
+        "$(document).ready(function(){".
+        "$('#mensaje').text('*** ERROR Usuario no ha ingresado al sistema');".
+        "})".
+        "</script>";
+        exit();
 }

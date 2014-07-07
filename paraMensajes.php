@@ -1,7 +1,7 @@
 <?php
-$message = "No ha llegado Mensajes"
-if(isset($_COOKIE['Continuar'])) {
-    $mensaje = $_COOKIE['Continuar'];
+$message = "No ha llegado Mensajes";
+if(isset($_COOKIE['Errores'])) {
+    $mensaje = $_COOKIE['Errores'];
 }
 require ('paraContinuar.html');
 echo '<script type="text/javascript">'.

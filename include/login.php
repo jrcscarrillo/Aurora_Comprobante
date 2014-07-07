@@ -2,7 +2,7 @@
 
 /* 
  * Autor:   Juan Carrillo
- * Fecha:   Junio 22 2014
+ * Fecha:   Julio 6 2014
  * Proyecto: Comprobantes Electronicos
  */
 session_start();
@@ -19,10 +19,6 @@ if ($_SESSION['carrillosteam'] == 'carrillosteam') {
 }
 
 include 'conectaBaseDatos.php';
-//echo 'Con Get \n\n';
-//var_dump($_GET);
-//echo '\nCon Post \n\n';
-//var_dump($_POST);
 if (isset($_POST['email'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -55,7 +51,7 @@ function loginUsuario($email, $password) {
                 require 'paraContinuar.html';
                 echo '<script type="text/javascript">'.
                         "$(document).ready(function(){".
-                        "$('#mensaje').html('El usuario ha ingresado saisfactoriamente');".
+                        "$('#mensaje').text('El usuario ha ingresado saisfactoriamente');".
                         "})".
                         "</script>";
                 $_SESSION['carrillosteam'] = 'carrillosteam';
@@ -67,7 +63,7 @@ function loginUsuario($email, $password) {
                 require 'paraContinuar.html';
                 echo '<script type="text/javascript">'.
                         "$(document).ready(function(){".
-                        "$('#mensaje').html('Usuario registrado pero no esta habilitado. Contactarse con el administrador');".
+                        "$('#mensaje').text('Usuario registrado pero no esta habilitado. Contactarse con el administrador');".
                         "})".
                         "</script>";
                 }
@@ -75,7 +71,7 @@ function loginUsuario($email, $password) {
             require 'paraMensajes.html';
             echo '<script type="text/javascript">'.
                     "$(document).ready(function(){".
-                    "$('#mensaje').html('Usuario no existe');".
+                    "$('#mensaje').text('Usuario no existe');".
                     "})".
                     "</script>";
         }

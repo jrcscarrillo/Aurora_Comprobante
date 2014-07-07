@@ -12,19 +12,15 @@
           "scrollX":true,
           "scrollColapse":true,
           "columns": [
-              { "width": "10%"},
-              { "width": "35%"},
-              { "width": "25%"},
-              { "width": "5%"},
-              { "width": "5%"},
-              { "width": "20%"},
-              { "width": "20%"},
-              { "width": "5%"}
+              { "width": "30%"},
+              { "width": "15%"},
+              { "width": "15%"},
+              { "width": "15%"}
           ],
 /*
  *          El llamado del ajax es para listar todos los contribuyentes desde la base de datos
  */
-          "ajax": "./include/getContribuyente.php"
+          "ajax": "./include/getArchivo.php"
         }); 
         new $.fn.dataTable.FixedColumns( table, {
             leftColumns: 1
@@ -46,30 +42,22 @@
            $(".selected").map( function()
            {
                var $fila = $(this);
-               var ruc = $fila.find(':nth-child(1)').text();
-               pasa += '{"Ruc":"' + ruc + '",';
-               var razon = $fila.find(':nth-child(2)').text();
-               pasa += '"Razon":"' + razon + '",';
-               var comercial = $fila.find(':nth-child(3)').text();
-               var estab = $fila.find(':nth-child(4)').text();
-               var punto = $fila.find(':nth-child(5)').text();
-               var matriz = $fila.find(':nth-child(6)').text();
-               var emisor = $fila.find(':nth-child(7)').text();
-               var contab = $fila.find(':nth-child(8)').text();
-               pasa += '"Comercial":"' + comercial + '",';
-               pasa += '"Establecimiento":"' + estab + '",';
-               pasa += '"Punto Emision":"' + punto + '",';
-               pasa += '"Direccion matriz":"' + matriz + '",';
-               pasa += '"Direccion Emisor":"' + emisor + '",';
-               pasa += '"Lleva Contabilidad":"' + contab + '"},';
+               var archivo = $fila.find(':nth-child(1)').text();
+               pasa += '{"Nombre_Archivo":"' + archivo + '",';
+               var generado = $fila.find(':nth-child(2)').text();
+               pasa += '"Generado":"' + generado + '",';
+               var descargado = $fila.find(':nth-child(3)').text();
+               var procesado = $fila.find(':nth-child(4)').text();
+               pasa += '"Descargado":"' + descargado + '",';
+               pasa += '"Procesado":"' + procesado + '",';
                console.log( "Datos: " + pasa);
            }).get();
   
            $.ajax(
                    {
-                    "url":"./include/selecContribuyente.php",
+                    "url":"./include/enviaFactura.php",
                     "method":"POST",
-                    "data":{"Contribuyente": pasa},
+                    "data":{"Archivo": pasa},
                     "dataType":"json",
 //                    "contentType": "application/json; charset=UTF-8",
                     "beforeSend": function(){

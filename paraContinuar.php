@@ -1,5 +1,5 @@
 <?php
-$message = "No ha llegado Mensajes"
+$message = "No ha llegado Mensajes";
 if(isset($_COOKIE['Continuar'])) {
     $mensaje = $_COOKIE['Continuar'];
 }
