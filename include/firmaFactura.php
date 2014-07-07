@@ -51,6 +51,11 @@ if (isset($_GET['start'])) {
 }
 
 function firmaFactura($fechaInicio, $fechaFin, $archivo) {
+/*
+ *      Consideraciones;
+ *          La sesion debe tner cargaados todos los campo del emisor 
+ *          para la generacion del archivo XML
+ */    
     $db = db_connect();
     if ($db->connect_errno) {
         die('Error de Conexion: ' . $db->connect_errno);
@@ -63,39 +68,47 @@ function firmaFactura($fechaInicio, $fechaFin, $archivo) {
     $flag = FALSE;
     $existe = $stmt->execute();
     $stmt->bind_result($db_id, $db_numero, $db_cliente, $db_estado);        /* fetch values */
+/*
+ * DOMDocument es el nombre del objetgo para crear un archivo XML
+ * Despues se utiliza la forma de PHP de generar tags en XML
+ */
     $doc = new DOMDocument();
     $doc->formatOutput = TRUE;
     $root = $doc->createElement('Facturas');
     $factura = $doc->createElement('factura');
+/*
+ *      Se procesan todas las facturas que tienen en el campo del usuario de la tabla de invoices del QB
+ *      el estado SELECCIONADA
+ */
     while ($stmt->fetch()) {
+       
         $flag = TRUE;
-  
-//        echo "Si encontro al " . $db_cliente . " que tiene la factura " . $db_numero . "\n";
-
+/*
+ *      Informacion del Emisor
+ */
         $db_infoTributaria = "";
         $infoTributaria = $doc->createElement('infoTributaria', $db_infoTributaria);
-
-        $db_ambiente = "";
+        $db_ambiente = $_SESSION['Ambiente'];
         $ambiente = $doc->createElement('ambiente', $db_ambiente);
-        $db_tipoEmision = "";
+        $db_tipoEmision = $_SESSION['Tipo Emision'];
         $tipoEmision = $doc->createElement('tipoEmision', $db_tipoEmision);
-        $db_razonSocial = "";
+        $db_razonSocial = $_SESSION['Razon Social'];
         $razonSocial = $doc->createElement('razonSocial', $db_razonSocial);
-        $db_nombreComercial = "";
+        $db_nombreComercial = $_SESSION['Nombre Comercial'];
         $nombreComercial = $doc->createElement('nombreComercial', $db_nombreComercial);
-        $db_ruc = "";
+        $db_ruc = $_SESSION['RUC'];
         $ruc = $doc->createElement('ruc', $db_ruc);
-        $db_claveAcceso = "";
+        $db_claveAcceso = $_SESSION['Clave Acceso'];
         $claveAcceso = $doc->createElement('claveAcceso', $db_claveAcceso);
-        $db_codDoc = "";
+        $db_codDoc = $_SESSION['Tipo Documento'];
         $codDoc = $doc->createElement('codDoc', $db_codDoc);
-        $db_estab = "";
+        $db_estab = $_SESSION['Establecimiento'];
         $estab = $doc->createElement('estab', $db_estab);
-        $db_ptoEmi = "";
+        $db_ptoEmi = $_SESSION['Punto'];
         $ptoEmi = $doc->createElement('ptoEmi', $db_ptoEmi);
         $db_secuencial = "";
         $secuencial = $doc->createElement('secuencial', $db_secuencial);
-        $db_dirMatriz = "";
+        $db_dirMatriz = $_SESSION['Direccion Matriz'];
         $dirMatriz = $doc->createElement('dirMatriz', $db_dirMatriz);
         $db_codigo = "";
         $codigo = $doc->createElement('codigo', $db_codigo);
@@ -112,7 +125,9 @@ function firmaFactura($fechaInicio, $fechaFin, $archivo) {
         $infoTributaria->appendChild($secuencial);
         $infoTributaria->appendChild($dirMatriz);
         $infoTributaria->appendChild($codigo);
-
+/*
+ *      Aqui esta el proceso de todas las facturas
+ */
 
         $db_infoFactura = "";
         $infoFactura = $doc->createElement('infoFactura', $db_infoFactura);
@@ -265,4 +280,33 @@ function firmaFactura($fechaInicio, $fechaFin, $archivo) {
     /* close statement */
     $stmt->close();
     $db->close();
+    generaArchivo($archivo);
+}
+
+function generaArchivo($archivo) {
+    
+    $db = db_connect();
+    if ($db->connect_errno) {
+        die('Error de Conexion: ' . $db->connect_errno);
+    }
+    $stmt = "";
+    $today = date("Y-m-d H:i:s");
+    $sql = "insert into Archivo(ArchivoNombre, ArchivoGenerado";
+    $sql .= ") values(?, ?)";
+    $stmt = $db->prepare($sql) or die(mysqli_error($db));
+    $stmt->bind_param("ss", $archivo, $today);
+    $stmt->execute();
+    // Get the ID generated from the previous INSERT operation
+    $newId = $db->insert_id;
+    $sql = "select * from Archivo where idArchivo=?";
+    if ($selectTaskStmt = $db->prepare($sql)) {
+        $selectTaskStmt->bind_param("i", $newId);
+        $selectTaskStmt->bind_result($wk_nombre);
+        $selectTaskStmt->execute();
+        if ($selectTaskStmt->fetch()) {
+            echo "Archivo adicionado\r\n";
+        } else {
+            echo "error archivo no se adiciono\r\n";
+        }
+    }
 }

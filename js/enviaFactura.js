@@ -64,10 +64,26 @@
 //                        alert("Este es para JSON: " + pasa);
                     },
 
+                    success: function( datos ) {
+                        correMensaje( datos ) 
+                    },
+
+                    error: function( xhr, status, errorThrown ) {
+                        document.cookie='Errores="*** ERROR No se ha seleccionado el archivo XML para procesar ***"';
+                        window.location.href = window.location.pathname.substring( 0, window.location.pathname.lastIndexOf( '/' ) + 1 ) + '../Aurora/paraMensajes.php';
+                        console.log( "Error: " + errorThrown );
+                        console.log( "Status: " + status );
+                        console.dir( xhr );
+                    },
                     complete: function( xhr, status ) {
 //                    alert( "The request is complete!" );
                     }
                    });
        });
       }); 
- 
+   function correMensaje( datos ){
+       if( datos = "GO" ){
+            document.cookie='Continuar="---Se ha seleccionado con exito el archivo XML desde el servidor ---"';
+             window.location.href = window.location.pathname.substring( 0, window.location.pathname.lastIndexOf( '/' ) + 1 ) + '../Aurora/paraContinuar.php';
+       }
+ }

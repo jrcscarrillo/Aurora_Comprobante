@@ -6,6 +6,14 @@
  */
 //var_dump($GLOBALS);
     session_start();
+    if (!isset($_SESSION['carrillosteam']) == 'carrillosteam') {
+        require 'paraMensajes.html';
+        echo '<script type="text/javascript">'.
+                "$(document).ready(function(){".
+                "$('#mensaje').text('*** ERROR Usuario no ha ingresado al sistema');".
+                "})".
+                "</script>";
+}
     include 'conectaBaseDatos.php';
 if (isset($_POST['Archivo'])) {
     $archivo = str_replace("},", "}|", $_POST['Archivo']);
@@ -38,7 +46,7 @@ function chkArchivo($wk_archivo, $wk_generado, $wk_descargado, $wk_procesado) {
     }
 //    echo "Numero: " . $wk_factura . " \n";
     $stmt = "";
-    $sql = "select ArchivoNombre, ArchivoGeerado, ArchivoDescargado, ArchivoProcesado from Archivo rwhere ArchivoNombre = ?";
+    $sql = "select ArchivoNombre, ArchivoGenerado, ArchivoDescargado, ArchivoProcesado from Archivo where ArchivoNombre = ?";
     $stmt = $db->prepare($sql) or die(mysqli_error($db));
    
     $stmt->bind_param("s", $wk_archivo);
