@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>AURORA - SRI</title>
+
+<link rel="stylesheet" href="css/reset.css" />
+<link rel="stylesheet" href="css/text.css" />
+<link rel="stylesheet" href="css/960_12_col.css" />
+<link rel="stylesheet" href="css/skin1.css" />
+<link rel="stylesheet" href="css/nivo-slider.css" />
+<link rel="stylesheet" href="css/jqueryslidemenu.css" />
+    <style>
+      #map_canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+      .container_12 {
+          min-height: 700px;
+      }
+    </style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/jqueryslidemenu.js"></script>
+<script type="text/javascript" src="js/jquery.nivo.slider.js"></script>
+<script type="text/javascript" src="js/jquery.bxSlider.min.js"></script>
+<script type="text/javascript" src="js/jquery.elastislide.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="js/scrolltop.js"></script>
+<script type="text/javascript" src="js/jquery.toggleElements.pack.js"></script>
+<script type="text/javascript" src="js/jquery.tools.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script>
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 18,
+    center: new google.maps.LatLng(-0.217420, -78.490605)
+  };
+  map = new google.maps.Map(document.getElementById('map_canvas'),
+      mapOptions);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+</script>
+</head>
+<body>
+<div id="wrapper" class="boxed">
+    <div class="top_navigation_container">
+        <div class="top_navigation">
+            <ul><li><a href="#contactenos">Contactenos</a></li>
+                <li><a href="http:\\www.carrillosteam.com">Carrillos Team</a></li>
+                <li><a href="#aplicacion">Esta Aplicacion</a></li>
+            </ul>
+        </div>
+        <div class="top_navigation_social">
+            <p>
+                AURORA_E
+            </p>
+            <ul><li class="social_facebook"><a href="#">Facebook</a></li>
+                <li class="social_twitter"><a href="#">Twitter</a></li>
+                <li class="social_dribbble"><a href="#">Dribbble</a></li>
+                <li class="social_linkedin"><a href="#">Linkedin</a></li>
+                <li class="social_pinterest"><a href="#">Pinterest</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="header">
+        <!-- Header start -->
+
+        <div class="container_12 clearfix">
+            <!-- Menu container -->
+            <div class="grid_12">
+                <!-- Start Menu -->
+                <div id="topnav" class="jqueryslidemenu">
+                    <ul><li><a href="#ingresar">Ingresar</a></li>
+                        <li><a href="#">Administracion</a>
+                            <ul><li><a href="#contribuyentes">Lista de Contribuyentes</a></li>
+                                <li><a href="#nuevocontribuyente">Nuevo Contribuyente</a></li>
+                                <li><a href="#generaclave">Generacion de Claves</a></li>
+                                <li><a href="#listaclaves">Lista de Claves</a></li>
+                                <li><a href="#recuperaclaves">Recuperacion de Claves</a></li>
+                                <li><a href="#documentacion">Documentacion</a></li>
+                            </ul></li>
+                    <li><a href="#">Facturas</a>
+                            <ul><li><a href="#selecfactura">Seleccion</a></li>
+                                <li><a href="#firmafactura">Firmar</a></li>
+                                <li><a href="#autorizadafactura">Autorizadas</a></li>
+                                <li><a href="#noautorizadafactura">No Autorizadas</a></li></ul></li>
+                        <li><a href="#">Notas DB</a>
+                            <ul><li><a href="#selecfactura">Seleccion</a></li>
+                                <li><a href="#firmaFactura">Firmar</a></li>
+                                <li><a href="#autorizadafactura">Autorizadas</a></li>
+                                <li><a href="#noautorizadafactura">No Autorizadas</a></li></ul></li>
+                        <li><a href="#">Notas CR</a>
+                            <ul><li><a href="#selecfactura">Seleccion</a></li>
+                                <li><a href="#firmaFactura">Firmar</a></li>
+                                <li><a href="#autorizadafactura">Autorizadas</a></li>
+                                <li><a href="#noautorizadafactura">No Autorizadas</a></li></ul></li>
+                        <li><a href="#">Retenciones</a>
+                            <ul><li><a href="#selecfactura">Seleccion</a></li>
+                                <li><a href="#firmaFactura">Firmar</a></li>
+                                <li><a href="#autorizadafactura">Autorizadas</a></li>
+                                <li><a href="#noautorizadafactura">No Autorizadas</a></li></ul></li>
+                        <li><a href="#">Guias</a>
+                            <ul><li><a href="#selecfactura">Seleccion</a></li>
+                                <li><a href="#firmaFactura">Firmar</a></li>
+                                <li><a href="#autorizadafactura">Autorizadas</a></li>
+                                <li><a href="#noautorizadafactura">No Autorizadas</a></li></ul></li>
+                        <li><a href="#salir">Salir</a></li>
+                    </ul>
+                </div>
+            </div><!-- end menu -->
+        </div><!-- end menu container -->
+    </div><!-- Header end -->
+
+<div class="container_12 clearfix" id="ingresar">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Ingresar<span class="subtitle">Version 1.0</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Ingresar al Sistema</h1>
+            <p>
+                Ingresar al sistema 
+            </p>
+            <h2>Objetivos</h2>
+            <p>Ingresar al Sistema
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="contribuyentes">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Contribuyentes<span class="subtitle">Tipo: Lista</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Contribuyentes</h1>
+            <p>
+                La lista contiene: RUC, Razon Social, Direccion, codigo establecimiento,
+                codigo punto de emision.               
+            </p>
+            <span></span>
+                <p>Se puede adicionr otros campos</p>
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de uno o mas puntos de emision de los comprobantes.
+                Es necesario para trasmitir la informacion del contribuyente en los documentos
+                electronicos enviados al SRI
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="nuevocontribuyente">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Nuevo Contribuyente<span class="subtitle">Tipo: Ingreso de Datos</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Nuevo Contribuyente</h1>
+            <p>Se ingresan los datos de todos los puntos de emision basados en los requerimientos
+                del SRI (RUC, direcciones, archivo de imagen con el logo, correo electronico administrativo,
+                resolucion, y otros.               
+            </p>
+            <span></span>
+                <p>Se puede adicionr otros campos</p>
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de uno o mas puntos de emision de los comprobantes.
+                Es necesario para trasmitir la informacion del contribuyente en los documentos
+                electronicos enviados al SRI
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="generaclave">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Genera Claves<span class="subtitle">Tipo: Proceso mixto</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Genera Claves</h1>
+            <p>Se debe proporcionar el nombre del archivo de texto enviado por el SRI.               
+            </p>
+            <span></span>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de las claves de contingencia entregadas por el SRI
+                Se debe controlar el estado de cada clave (usada, autorizada, rechazada)
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="listaclaves">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Lista Claves<span class="subtitle">Tipo: Lista</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Lista Claves</h1>
+            <p>Se lista las claves que pertenecen al contribuyente con los siguientes datos:
+                numero clave y estado.               
+            </p>
+            <span></span>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de las claves de contingencia entregadas por el SRI
+                Se debe controlar el estado de cada clave (usada, autorizada, rechazada)
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="recuperaclaves">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Recupera Claves<span class="subtitle">Tipo: Proceso con respuesta</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Reecupera Claves</h1>
+            <p>Se genera nuevamente las claves desde el archivo de texto que fue entregado por el SRI y    
+                ademas se revisa todos los documentos que utilizaron la clave de contingencia para actualizae
+                las claves de contingencia.               
+            </p>
+            <span></span>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Resultado: Indica cuantas claves se recuperaron y cuantas han sido utilizadas y cuantas estan disponibles.
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="documentacion">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Documentacion<span class="subtitle">Tipo: Informativo</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Documentacion</h1>
+            <p>Toda la informacion relacionada con la aplicacion               
+            </p>
+            <span></span>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Informar el contenido de la aplicacion.
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="selecfactura">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Seleccion de Facturas<span class="subtitle">Tipo: Proceso Mixto</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Seleccion de Facturas</h1>
+            <h3>**** OJO **** Antes de realizar este proceso se debe haber procesado la sincronizacion de la base de datos
+            </h3>
+            <p>Primer paso seleccionar las facturas (por fechas, por numero, otro) por definir</p>
+            <span></span>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Seleccionar todas las facturas que seran procesadas con el certificado digital.
+                Resultado: Numero de facturas seleccionadas, total facturado.
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="firmafactura">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Firmar Facturas<span class="subtitle">Tipo: Proceso Internet</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Firmar Facturas</h1>
+            <h3>**** OJO **** En este proceso se debe tener una linea de internet con buena velocidad y rendimiento
+            </h3>
+            <p>Primer paso insertar las claves y el certificado digital en el lote de facturas (puede ser una factura)
+                Segundo paso: ingresar el nombre del archivo a generar</p>
+            Tercer paso: generar el archivo xml y transmitirlo al SRI el archivo se guarda en el directorio 
+            LETRA DEL DISCO DEL SERVIDOR:/wamp/www/aurora/tmp/NOMBRE DEL ARCHIVO
+            Cuarto paso se recibe la respuesta del SRI
+            Quinto paso se actualizan las facturas autorizadas o no autorizadas
+            <span></span>
+            <h2>*** Sexto paso: enviar las facturas autorizadas al correo electronico de cada cliente</h2>
+                <p>Nada adicional</p>
+            <h2>Objetivos</h2>
+            <p>Utilizar los servicios del internet provistos por el SRI para autorizar las facturas con la firma digital
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="autorizadafactura">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Lista de Facturas Autorizadas<span class="subtitle">Tipo: Lista</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Lista de Facturas Autorizadas</h1>
+            <p>Se lista las facturas que han sido autorizadas:
+                DATOS EN LA LISTA.               
+            </p>
+            <span></span>
+            <h2>Definir los datos en la lista</h2>
+                
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de las facturas autorizadas
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="noautorizadafactura">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Lista de Facturas NO Autorizadas<span class="subtitle">Tipo: Lista</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Lista de Facturas NO Autorizadas</h1>
+            <p>Se lista las facturas que NO han sido autorizadas:
+                DATOS EN LA LISTA.               
+            </p>
+            <span></span>
+            <h2>Definir los datos en la lista</h2>
+                
+            <h2>Objetivos</h2>
+            <p>Mantener la informacion de las facturas NO autorizadas
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+
+<div class="container_12 clearfix" id="salir">
+    <div id="content_wrapper">
+        <div class="grid_12 page_title">
+            <h1>Salir<span class="subtitle">Version 1.0</span></h1>
+        </div>        
+        <div id="content" class="grid_6">
+            <h1>Salir del Sistema</h1>
+            <p>
+                Salir del sistema 
+            </p>
+            <h2>Objetivos</h2>
+            <p>Salir del Sistema
+            </p>
+        </div>
+        <div>
+            <button class="altope">ARRIBA</button>
+        </div>
+        <div class="grid_12"><div class="separator line"></div></div>  
+
+    </div><!-- End content wrapper -->
+</div><!-- End container_12 -->
+            
+            <div id="pre_footer">
+                <div class="pre_footer_wrapper">
+                    <div id="footersliding" class="container_12 clearfix">
+
+                    </div>
+                </div>
+            </div>    
+            <div id="footer_wrapper">
+                <div class="container_12 clearfix">
+                    <div class="footerslidingarrow"></div>
+                    <div id="footer">
+                        <div class="copyright_left">&reg; Copyright 2014 Carrillos Team</div>
+                        <div class="copyright_right">Powered by <a href="http://www.thunderthemes.net">ThunderThemes.net</a></div>
+                    </div>
+                </div>
+            </div>
+            <div id="topcontrol" style="position: fixed; bottom: 0px; right: 0px; opacity: 1; cursor: pointer;" title="To the top! To the victory!">
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('#carousel').elastislide({
+                imageW: 135,
+                margin: 20,
+                minItems: 4,
+                border: 1,
+            });
+            $(".block_accordion").tabs(".block_accordion .content", {
+                tabs: '.button_outer',
+                effect: 'slide',
+                initialIndex: 0
+            });
+            $(".altope").click(function(){
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+            $("#wrapper").css('height',$(".container_12 clearfix").innerHeight());
+        </script>
+    </body>
+</html>

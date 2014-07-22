@@ -29,6 +29,10 @@
             $(this).toggleClass('selected');
         } );
 
+        $("#button1").click( function(e) {
+            e.preventDefault();
+            window.location ='./index3.html'; 
+        });
        $("#button").click( function(e) 
        {
            e.preventDefault();

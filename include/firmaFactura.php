@@ -298,13 +298,13 @@ function generaArchivo($archivo) {
     $stmt->execute();
     // Get the ID generated from the previous INSERT operation
     $newId = $db->insert_id;
-    $sql = "select * from Archivo where idArchivo=?";
+    $sql = "select ArchivoNombre from Archivo where idArchivo=?";
     if ($selectTaskStmt = $db->prepare($sql)) {
         $selectTaskStmt->bind_param("i", $newId);
         $selectTaskStmt->bind_result($wk_nombre);
         $selectTaskStmt->execute();
         if ($selectTaskStmt->fetch()) {
-            echo "Archivo adicionado\r\n";
+            echo "Archivo adicionado:" . $wk_nombre . "\r\n";
         } else {
             echo "error archivo no se adiciono\r\n";
         }

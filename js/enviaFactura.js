@@ -9,22 +9,22 @@
         var table = $("#the_table").dataTable({ 
           "processing":true,
           "serverSide":true,
-          "scrollX":true,
+//          "scrollX":true,
           "scrollColapse":true,
           "columns": [
-              { "width": "30%"},
+              { "width": "55%"},
               { "width": "15%"},
               { "width": "15%"},
               { "width": "15%"}
           ],
 /*
- *          El llamado del ajax es para listar todos los contribuyentes desde la base de datos
+ *          El llamado del ajax es para listar todos los archivos XML desde la base de datos
  */
           "ajax": "./include/getArchivo.php"
         }); 
-        new $.fn.dataTable.FixedColumns( table, {
-            leftColumns: 1
-        } );
+//        new $.fn.dataTable.FixedColumns( table, {
+//            leftColumns: 1
+//        } );
         $('#the_table tbody').on( 'click', 'tr', function () {
         if ($(this).hasClass('selected')) {
             $(this).removeClass('selected');
@@ -44,7 +44,7 @@
                var $fila = $(this);
                var archivo = $fila.find(':nth-child(1)').text();
                pasa += '{"Nombre_Archivo":"' + archivo + '",';
-               var generado = $fila.find(':nth-child(2)').text();
+               var generado = $fila.find(':nth-child(2)').val();
                pasa += '"Generado":"' + generado + '",';
                var descargado = $fila.find(':nth-child(3)').text();
                var procesado = $fila.find(':nth-child(4)').text();
@@ -61,7 +61,7 @@
                     "dataType":"json",
 //                    "contentType": "application/json; charset=UTF-8",
                     "beforeSend": function(){
-//                        alert("Este es para JSON: " + pasa);
+                        alert("Este es para JSON: " + pasa);
                     },
 
                     success: function( datos ) {
@@ -69,7 +69,7 @@
                     },
 
                     error: function( xhr, status, errorThrown ) {
-                        document.cookie='Errores="*** ERROR No se ha seleccionado el archivo XML para procesar ***"';
+                        document.cookie='Errores="*** ERROR No se pudo seleccionar el archivo XML para procesar ***"';
                         window.location.href = window.location.pathname.substring( 0, window.location.pathname.lastIndexOf( '/' ) + 1 ) + '../Aurora/paraMensajes.php';
                         console.log( "Error: " + errorThrown );
                         console.log( "Status: " + status );

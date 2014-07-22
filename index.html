@@ -127,27 +127,45 @@ google.maps.event.addDomListener(window, 'load', initialize);
             <div class="container_12 clearfix">
                 <div id="content_wrapper">
                     <div class="grid_12 page_title">
-                        <h1>Documentacion: Comprobantes electronicos extension para Quickbooks<span class="subtitle">Version 1.0 (Preparado para SALGRAF) </span></h1>
+                        <h1>Documentacion: Comprobantes electronicos extension para ERP's o CRM's<span class="subtitle">Version 1.0 </span></h1>
                     </div>        
                     <div id="content" class="grid_6">
-                        <h1>Presentacion AURORA_E</h1>
+                        <h1>Presentacion AURORA_E</h1><a href="./Firma_Aurora/index.html">Modelador</a>
                         <p>
                             El Servicio de Rentas Internas del Ecuador ha expedido las normas para la implementacion de la
                             firma electronica de los documentos emitidos por los sujetos pasivos.
                             Los documentos que deberan ser firmados digitalmene son: las facturas,
                             las notas de debito y credito, los comprobantes de retencion, y las guias de remision.
-                            SALGRAF ha proporcionado la información inicial para desarrollar esta aplicación
-                            para satisfacer los requerimientos empresariales de SALGRAF en relación con la 
-                            emisión de los comprobantes emitidos por la compañía bajo los estándares corporativos
-                            de SALGRAF y su emisión electrónica bajo las reglas anunciadas por el SRI. 
+                            Con la inforamcion proporcionada por el SRI y en conjunto con los requerimientos puntuales
+                            de varias empresas que tienen instaladas aplicaciones del tipo ERP o CRM se ha desarrollado 
+                            esta extension para sincronizar los datos de sus bases de datos con la base de datos de 
+                            esta extension. La emision electronica de los comprobantes tienen una doble funcion satisfacer
+                            los requerimientos tributarios del SRI y mantener los estandares empresariales.
+                            
                         </p>
                         <h2>Objetivos</h2>
                         <p>La aplicación administra todos los procesos para la emisión electronica de facturas, 
                             notas de débito, notas de crédito, guías de remisión, y comprobantes de retención; 
                             utilizando los servicios del Internet y adjuntando la certificación electrónica para 
-                            enviar a los clientes de SALGRAF por medio del correo electrónico. 
-                            Para el efecto la aplicación utilizara la sincronización de los datos desde la 
-                            aplicación Quickbooks con la base de datos generada por esta nueva aplicación.
+                            enviar a los clientes de las empresas que utilizan esta extension por medio del correo electrónico
+                            o registrando los documentos PDF en el portal de la organizacion. 
+                            Para el efecto la aplicación utilizara la sincronización de los datos desde las 
+                            aplicaciones que mantienen las empresas con la base de datos generada por esta nueva aplicación.
+                        </p>
+                        <h2>Extension disponible para:</h2>
+                        <p>
+                            Quickbooks desde QB2009. (Lista para Instalar)
+                        </p>
+                        <p>
+                            AURORA desde la version 2011. (Lista para Instalar)
+                        </p>
+                        <p>
+                            Softworld desde la version 2010. (Lista para instalar)
+                        </p>
+                        <p>
+                            Cualquier otro ERP o CRM. Para la instalacion de esta extension en otras aplicaciones
+                            sera necesario utilizar un utilitario para sincronizar las bases de datos de la
+                            aplicacion de negocios en funcionamiento y esta extension. 
                         </p>
                     </div>
                     <div class="grid_6">
@@ -176,10 +194,18 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             Permite recuperar los reports generados en QUICKBOOKS 
                             Se puede sincronizar con las bases de datos: MS Access, Microsoft SQLServer, MySQL, y 
                             Oracle. 
-                            Operaciones de sincronizacion automatcas con bitacora de eventos y un navegador de datos 
+                            Operaciones de sincronizacion automaticas con bitacora de eventos y un navegador de datos 
                             incluido. Es una herramienta con mejores alternativas que QODBC.
 
                         </p>
+                        <h3>Softworld y DbSyncProvider Class</h3>
+                        <p>
+                            Esta clase es provista por Microsoft y permite sincronizar una base de datos paralela
+                            a la base de datos principal.
+                        </p>
+                        <h3>Aurora</h3>
+                            Esta extension asi como el ATS y los requerimientos del manejo de los documentos de credito,
+                            son parte del ERP AURORA.
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>  
                     <div class="grid_3 columns">                  
@@ -189,7 +215,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                                 <ol>
                                     <li>Generar al menos dos copias del certificado digital</li>
                                     <li>Instalar el servidor web</li>
-                                    <li>Instalar Opensync</li>
+                                    <li>Instalar Sincronizador de Base de Datos</li>
                                     <li>Definir proceso de generacion de la base de datos sincronizada</li>
                                     <li>Generar los indices y relaciones de las tablas</li>
                                 </ol>
@@ -198,7 +224,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
                             <li>Ambiente de Produccion</li>
                             <li>Procesos utilitarios</li>
                         </ol>
-                        <a class="button large green" href="http://www.carrillosteam.com">Carrillos Team</a>
+                        <a class="button large green" href="./Firma_Aurora/index.html">Carrillos Team</a>
                     </div>
                     <div class="grid_3 columns">  
                         <h3>Opciones de Administracion</h3>
@@ -216,14 +242,14 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <div class="grid_3 columns">  
                         <h3>Procesos en Produccion</h3>
                         <ul class="bullet">
-                            <li>Seleccionar los comprobanes desde Quickbooks</li>
+                            <li>Seleccionar los comprobanes desde (ERP/CRM/Otro)</li>
                             <li>Seleccionar los comprobantes para firmar</li>
                             <li>Enviar los comprobanes firmados</li>
                             <li>Recibir la respuesta</li>
                             <li>Revisar autorizados y rechazados</li>
                             <li>Enviar comprobantes autorizados a los clientes</li>
                         </ul>
-                        <a class="button large blue" href="http://www.carrillosteam.com">Carrillos Team</a>
+                        <a class="button large blue" href="./Firma_Aurora/index.html">Carrillos Team</a>
                     </div>
                     <div class="grid_3 columns">  
                         <h3>Procesos Utilitarios</h3>
@@ -242,7 +268,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
                     <div class="grid_12"><div class="separator line"></div></div>  
                     <div class="grid_12"><h3>Diagrama General de la Aplicacion</h3>
                         <a href="#"><img class="alignleft" src="./images/aurora_e.png" width="500" height="368" alt="Image Placeholder" /></a>
-                        Esta aplicación es autónoma del Quickbooks, y se puede ejecutar sin necesidad de que esté disponible Quickbooks. 
+                        Esta aplicación es autónoma de cualquier otro aplicacion de negocios como ERP'S, CRM's
+                        u otros, y se puede ejecutar sin necesidad de que esté disponible las bases de datos de su aplicacion principal. 
                         La aplicación controlara todos los documentos que han sido emitidos, requeridos para la firma, firmados, 
                         autorizados, rechazados, pendientes y pueden ser consultados utilizando la base de datos generada por la
                         aplicacion y que residen en un servidor de Internet. 
@@ -272,7 +299,20 @@ google.maps.event.addDomListener(window, 'load', initialize);
                         de QuickBooks con MySQL, SQL Server, Access, u Oracle.
                         Existen dos versiones de Opensync la configuracion basica utiliza Access, y la otra version administra
                         las otras bases de datos. La principal ventaja que significa poseer una base de datos paralela 
-                        y sincronizada con la base de datos de Quickbooks es, los datos pueden ser de tener una base de datos del mercado permitirá a SALGRAF integrar la base de datos sincronizada desde QuickBooks con cualquier desarrollo y este podría ser: la integración con el website corporativo, generación de reportes, y/o desarrollo de otras aplicaciones.
+                        y sincronizada con la base de datos de Quickbooks es, los datos pueden ser de tener una base de datos
+                        del mercado permitirá a las empresar integrar la base de datos sincronizada desde QuickBooks con 
+                        cualquier desarrollo y este podría ser: la integración con el website corporativo, generación de 
+                        reportes, y/o desarrollo de otras aplicaciones.
+                        
+                        Para las aplicaciones (ERP, CRM, Otroas) que tienes SQLServer como su administrador
+                        de base de datos utilizamos DbSyncProvider, Esta clase encapsula en un ambiente
+                        cliente-servidor la sincronizacion de la base de datos principal con la base de datos de esta
+                        extension a travez de la comunicacion administrada por esta clase.
+                   
+
+                    </div>
+                    <div class="grid_12"><h3>Aurora_E bajo el Modelador de Procesos Bizagi</h3>
+                        <a href="./Firma_Aurora/index.html">AURORA_E</a>
                     </div>
                     <div class="grid_12"><div class="separator line"></div></div>
                     <div class="grid_6">

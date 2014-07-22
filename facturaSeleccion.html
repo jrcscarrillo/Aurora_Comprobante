@@ -1,0 +1,74 @@
+<!doctype html>  
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">	
+	<title>Selecciona Facturas</title>	
+	<link rel="stylesheet" href="css/documenter_style.css" media="all">
+	<script src="js/jquery.scrollTo-1.4.2-min.js"></script>
+	<script src="js/jquery.easing.js"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="css/shDocumenter.css" media="screen">
+	<script src="js/shCore.js"></script>
+	<script src="js/shBrushCss.js"></script>
+	<script src="js/shBrushXml.js"></script>
+	<script>SyntaxHighlighter.defaults['toolbar'] = false;SyntaxHighlighter.all();</script>
+
+	<script>document.createElement('section');var duration=500,easing='swing';</script>
+	<script src="js/script.js"></script>
+        <link rel="stylesheet" href="./css/jquery.dataTables.css" />
+        <link rel="stylesheet" href="./css/jquery.dataTables_themeroller.css" />
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+	</style>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="./js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="./js/dataTables.fixedColumns.js"></script>
+        <script type="text/javascript" src="./js/json2.js"></script>
+        <script type="text/javascript" src="./js/selectFactura.js"></script>	
+</head>
+<body>
+<div id="documenter_aurora">
+    <table id="the_table" class="display" cellspacing="0" width="100%"> 
+        <thead> 
+          <tr>
+            <th>Numero Factura</th>
+            <th>Razon Social</th>
+            <th>Fecha Emision</th>
+            <th>Subtotal</th>
+            <th>Impuestos</th>
+            <th>Total</th>
+            <th>Estado</th>
+          </tr> 
+        </thead> 
+        <tbody>         
+        </tbody> 
+    </table>  
+
+    <div>
+        <a id="button" class="btn btn-success">
+        <i class="fa fa-flag fa-2x pull-left"></i> Procesar<br>Seleccionados</a>
+    </div>
+    <div>
+        <a id="button1" class="btn btn-success" style="float:right">
+        <i class="fa fa-flag fa-2x pull-left"></i> Regresar<br>Menu</a>
+    </div>  
+</div>
+  
+</body>
+</html>
